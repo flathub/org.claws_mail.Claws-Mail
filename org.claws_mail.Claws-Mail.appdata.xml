@@ -28,7 +28,7 @@
   <icon type="remote" height="64" width="64">https://github.com/flathub/org.claws_mail.Claws-Mail/raw/master/share/icons/hicolor/64x64/apps/claws-mail.png</icon>
   <icon type="remote" height="48" width="48">https://github.com/flathub/org.claws_mail.Claws-Mail/raw/master/share/icons/hicolor/48x48/apps/claws-mail.png</icon>
   
-  <launchable>claws-mail</launchable>
+  <launchable type="desktop-id">/app/share/applications/claws-mail.desktop</launchable>
 
   <screenshots>
     <screenshot>
@@ -48,7 +48,7 @@
       <description>
         <p>New in this release:</p>
         <ul>
-		      <li>New HTML viewer plugin: Litehtml viewer</li>
+          <li>New HTML viewer plugin: Litehtml viewer</li>
           <li>Added option 'Enable keyboard shortcuts' to the 'Keyboard shortcuts' frame on /Configuration/Preferences/Other/Miscellaneous</li>
           <li>Compose: implemented copying of attached images to clipboard</li>
           <li>Compose: images and text/uri-list (files) can now be attached by pasting into the Compose window</li>
