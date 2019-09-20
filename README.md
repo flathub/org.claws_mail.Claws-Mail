@@ -37,7 +37,6 @@ Reminders for later consideration.
 - FIXME: add screenshots in prescribed resolution.
 - FIXME: align exact versions of dependencies with packaging instructions for debian/ubuntu by Claws-Mail developers.
 - FIXME: create .desktop file.
-- FIXME: update URLs for screenshots to newly created `flathub/org.claws_mail.Claws-Mail` repository upon creation.
 - TODO: Check if we can skip building documentation for _gdata_ dependency.
 - TODO: Check if we can integrate with NetworkManager. This feature is now disabled.
 - TODO: Investigate if building for i386 is possible.

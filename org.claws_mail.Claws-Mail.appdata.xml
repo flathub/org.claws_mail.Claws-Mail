@@ -23,18 +23,22 @@
     <p>The messages are managed in the standard MH format, which features fast access and data security. You'll be able to import your emails from almost any other email client, and export them just as easily.</p>
     <p>Lots of extra functionality, like an RSS aggregator, calendar, or laptop LED handling, are provided by extra plugins.</p>
   </description>
+
+  <icon type="remote" height="128" width="128">https://github.com/flathub/org.claws_mail.Claws-Mail/raw/master/share/icons/hicolor/128x128/apps/claws-mail.png</icon>
+  <icon type="remote" height="64" width="64">https://github.com/flathub/org.claws_mail.Claws-Mail/raw/master/share/icons/hicolor/64x64/apps/claws-mail.png</icon>
+  <icon type="remote" height="48" width="48">https://github.com/flathub/org.claws_mail.Claws-Mail/raw/master/share/icons/hicolor/48x48/apps/claws-mail.png</icon>
   
   <launchable>claws-mail</launchable>
 
   <screenshots>
     <screenshot>
       <image type="source">
-        https://raw.githubusercontent.com/cobratbq/flathub-org.clawsmail.Claws-Mail/org.clawsmail.Claws-Mail/screenshot-main.png
+        https://raw.githubusercontent.com/flathub/org.claws_mail.Claws-Mail/master/screenshot-main.png
       </image>
     </screenshot>
     <screenshot>
       <image type="source">
-        https://raw.githubusercontent.com/cobratbq/flathub-org.clawsmail.Claws-Mail/org.clawsmail.Claws-Mail/screenshot-compose.png
+        https://raw.githubusercontent.com/flathub/org.claws_mail.Claws-Mail/master/screenshot-compose.png
       </image>
     </screenshot>
   </screenshots>
