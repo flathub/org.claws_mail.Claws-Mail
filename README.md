@@ -2,20 +2,52 @@
 
 The flathub recipe for building [Claws-Mail](https://claws-mail.org) as a flatpak distributable package.
 
-## Dependencies
+## Functionality
+
+Claws-Mail with the following plug-ins:
+
+- ACPI notifier
+- Address keeper
+- Archive
+- Attach warner
+- Attachment remover
+- Bogofilter
+- Clamd
+- FetchInfo
+- GData
+- Libravatar
+- Lite-HTML viewer
+- MBox mailstore support
+- Manage sieve
+- New Mail-notifications
+- Notifications
+- PDF Viewer
+- PGP/Core
+- PGP/Inline
+- PGP/MIME
+- RSSyl
+- S/MIME
+- Spam Assassin
+- Spam report
+- TNEF parser
+- vCalendar
+
+## Packaging details
+
+### Dependencies
 
 The dependencies are as follows. In addition, the dependencies are in-order in the [Claws-Mail manifest](org.claws_mail.Claws-Mail.json).
 
-Claws-Mail:
+Claws-Mail dependencies:
 - libetpan
 
-Plug-ins:
+Plug-in with dependencies:
 - TNEF
   - libytnef
 - PDF-viewer
   - libpoppler
     - libopenjpeg
-- VCalendar
+- vCalendar
   - libical
 - Lite HTML-viewer
   - libgumbo
@@ -25,10 +57,10 @@ Plug-ins:
 - Bogofilter
   - bogofilter (cli filter application)
 
-Disabled plug-ins:
-- Dillo
-- BSFilter
-- Perl
+Disabled plug-ins due to unresolved dependencies:
+- Dillo (assumes `dillo` is available)
+- BSFilter (assumes `bsfilter` is available)
+- Perl (assumes `perl` is available)
 
 ## TODO
 
