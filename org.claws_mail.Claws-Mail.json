@@ -241,7 +241,6 @@
       "buildsystem": "simple",
       "build-commands": [
         "install -Dm644 org.claws_mail.Claws-Mail.appdata.xml /app/share/metainfo/org.claws_mail.Claws-Mail.appdata.xml",
-        "install -Dm644 org.claws_mail.Claws-Mail.appdata.xml /app/share/appdata/org.claws_mail.Claws-Mail.appdata.xml",
         "install -Dm644 claws-mail-48x48.png /app/share/icons/hicolor/48x48/apps/claws-mail.png",
         "install -Dm644 claws-mail-64x64.png /app/share/icons/hicolor/64x64/apps/claws-mail.png",
         "install -Dm644 claws-mail-128x128.png /app/share/icons/hicolor/128x128/apps/claws-mail.png"
