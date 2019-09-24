@@ -57,44 +57,45 @@
           <li>MBOX export: the Enter key in the dialogue now starts the export</li>
           <li>The date (ISO format) has been added to log timestamps</li>
           <li>Updated translations: Brazilian Portuguese, Catalan, Czech, Danish, Dutch, French, German, Hungarian, Indonesian, Polish, Portuguese, Romanian, Russian, Slovak, Spanish, Swedish, Traditional Chinese, Turkish</li>
-          <li>Bug fixes: <ul>
-            <li>bug 1920, 'No automatic NNTP filtering'</li>
-            <li>bug 2045, 'address book blocks focus on email window'</li>
-            <li>bug 2131, 'Focus stealing after mail check'</li>
-            <li>bug 2627, 'Filtering does not work on NNTP'</li>
-            <li>bug 3070, 'misbehaving text wrapping when URL chars are present'</li>
-            <li>bug 3838, 'Canceled right-click on message list leaves UI in inconsistent state'</li>
-            <li>bug 3977, 'Fix crashes when some external APIs fail'</li>
-            <li>bug 3979, 'Hang (with killing needed) during action which extracts attachments'</li>
-            <li>bug 4029, 'segfault after deleting message in a window'</li>
-            <li>bug 4031, 'fingerprint in SSL/TLS certificates for ... (regress error)'</li>
-            <li>bug 4037, 'Fix some small issues'</li>
-            <li>bug 4142, 'Translation error on Russian'</li>
-            <li>bug 4145, 'proxy server for sending doesn't work'</li>
-            <li>bug 4155, 'remember directory of last saving'</li>
-            <li>bug 4166, 'corrupted double-linked list'</li>
-            <li>bug 4167, 'Max line length exceeded when forwarding mail'</li>
-            <li>bug 4188, 'STL file is sent not as an attachment but as its base64 representation in plaintext'</li>
-            <li>CID 1442278, 'impossible to trigger buffer overflow'</li>
-            <li>Make key accelerators from menu work in addressbook window</li>
-            <li>save checkbox choices of display/summaries/defaults prefs</li>
-            <li>Do not throw an error when cancelling 'Save email as...'.</li>
-            <li>occasional crash on drag'n'drop of msgs</li>
-            <li>possible stack overflow in vcalendar's Curl data handler</li>
-            <li>crash when LDAP address source is defined in index, but LDAP support is disabled</li>
-            <li>crash in Fancy plugin if one of the MIME parts has no Content-ID</li>
-            <li>a few small memory leaks in scan_mailto_url()</li>
-            <li>configure script for rare cases where python is not installed</li>
-            <li>incorrect charset conversion in sc_html_read_line().</li>
-            <li>markup in 'key not fully trusted' warning in pgpcore</li>
-            <li>use after free in rare code path in rssyl_subscribe()</li>
-            <li>several memory leaks</li>
-            <li>verify_folderlist_xml() for fresh starts</li>
-            <li>printf formats for size_t and goffset arguments.</li>
-            <li>alertpanel API use in win32 part of mimeview.c</li>
-            <li>pid handling in debug output of kill_children_cb()</li>
-            <li>incorrect pointer arithmetic in w32_filesel.c</li>
-          </ul></li>
+	</ul>
+	<p>Bug fixes:</p>
+	<ul>
+          <li>bug 1920, 'No automatic NNTP filtering'</li>
+          <li>bug 2045, 'address book blocks focus on email window'</li>
+          <li>bug 2131, 'Focus stealing after mail check'</li>
+          <li>bug 2627, 'Filtering does not work on NNTP'</li>
+          <li>bug 3070, 'misbehaving text wrapping when URL chars are present'</li>
+          <li>bug 3838, 'Canceled right-click on message list leaves UI in inconsistent state'</li>
+          <li>bug 3977, 'Fix crashes when some external APIs fail'</li>
+          <li>bug 3979, 'Hang (with killing needed) during action which extracts attachments'</li>
+          <li>bug 4029, 'segfault after deleting message in a window'</li>
+          <li>bug 4031, 'fingerprint in SSL/TLS certificates for ... (regress error)'</li>
+          <li>bug 4037, 'Fix some small issues'</li>
+          <li>bug 4142, 'Translation error on Russian'</li>
+          <li>bug 4145, 'proxy server for sending doesn't work'</li>
+          <li>bug 4155, 'remember directory of last saving'</li>
+          <li>bug 4166, 'corrupted double-linked list'</li>
+          <li>bug 4167, 'Max line length exceeded when forwarding mail'</li>
+          <li>bug 4188, 'STL file is sent not as an attachment but as its base64 representation in plaintext'</li>
+          <li>CID 1442278, 'impossible to trigger buffer overflow'</li>
+          <li>Make key accelerators from menu work in addressbook window</li>
+          <li>save checkbox choices of display/summaries/defaults prefs</li>
+          <li>Do not throw an error when cancelling 'Save email as...'.</li>
+          <li>occasional crash on drag'n'drop of msgs</li>
+          <li>possible stack overflow in vcalendar's Curl data handler</li>
+          <li>crash when LDAP address source is defined in index, but LDAP support is disabled</li>
+          <li>crash in Fancy plugin if one of the MIME parts has no Content-ID</li>
+          <li>a few small memory leaks in scan_mailto_url()</li>
+          <li>configure script for rare cases where python is not installed</li>
+          <li>incorrect charset conversion in sc_html_read_line().</li>
+          <li>markup in 'key not fully trusted' warning in pgpcore</li>
+          <li>use after free in rare code path in rssyl_subscribe()</li>
+          <li>several memory leaks</li>
+          <li>verify_folderlist_xml() for fresh starts</li>
+          <li>printf formats for size_t and goffset arguments.</li>
+          <li>alertpanel API use in win32 part of mimeview.c</li>
+          <li>pid handling in debug output of kill_children_cb()</li>
+          <li>incorrect pointer arithmetic in w32_filesel.c</li>
         </ul>
       </description>
     </release>
