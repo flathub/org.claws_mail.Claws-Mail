@@ -28,7 +28,7 @@
   <icon type="remote" height="64" width="64">https://github.com/flathub/org.claws_mail.Claws-Mail/raw/master/share/icons/hicolor/64x64/apps/claws-mail.png</icon>
   <icon type="remote" height="48" width="48">https://github.com/flathub/org.claws_mail.Claws-Mail/raw/master/share/icons/hicolor/48x48/apps/claws-mail.png</icon>
   
-  <launchable type="desktop-id">/app/share/applications/claws-mail.desktop</launchable>
+  <launchable type="desktop-id">org.claws_mail.Claws-Mail.desktop</launchable>
 
   <screenshots>
     <screenshot>

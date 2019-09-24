@@ -241,6 +241,7 @@
       "buildsystem": "simple",
       "build-commands": [
         "install -Dm644 org.claws_mail.Claws-Mail.appdata.xml /app/share/metainfo/org.claws_mail.Claws-Mail.appdata.xml",
+        "install -Dm644 org.claws_mail.Claws-Mail.desktop /app/share/applications/org.claws_mail.Claws-Mail.desktop",
         "install -Dm644 claws-mail-48x48.png /app/share/icons/hicolor/48x48/apps/org.claws_mail.Claws-Mail.png",
         "install -Dm644 claws-mail-64x64.png /app/share/icons/hicolor/64x64/apps/org.claws_mail.Claws-Mail.png",
         "install -Dm644 claws-mail-128x128.png /app/share/icons/hicolor/128x128/apps/org.claws_mail.Claws-Mail.png"
@@ -250,6 +251,14 @@
           "type": "file",
           "path": "org.claws_mail.Claws-Mail.appdata.xml"
         },
+        {
+          "type": "file",
+          "path": "org.claws_mail.Claws-Mail.desktop"
+        },
+	{
+          "type": "patch",
+          "path": "fix-desktop-icon.patch"
+	},
 	{
 	  "type": "file",
 	  "path": "claws-mail-48x48.png"
