@@ -256,10 +256,6 @@
           "path": "org.claws_mail.Claws-Mail.desktop"
         },
 	{
-          "type": "patch",
-          "path": "fix-desktop-icon.patch"
-	},
-	{
 	  "type": "file",
 	  "path": "claws-mail-48x48.png"
 	},
