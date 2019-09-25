@@ -41,6 +41,11 @@
         https://raw.githubusercontent.com/flathub/org.claws_mail.Claws-Mail/master/screenshot-compose.png
       </image>
     </screenshot>
+    <screenshot>
+      <image type="source">
+        https://raw.githubusercontent.com/flathub/org.claws_mail.Claws-Mail/master/screenshot-read.png
+      </image>
+    </screenshot>
   </screenshots>
 
   <releases>
