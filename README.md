@@ -66,9 +66,6 @@ Disabled plug-ins due to unresolved dependencies:
 
 Reminders for later consideration.
 
-- FIXME: add screenshots in prescribed resolution.
-- FIXME: align exact versions of dependencies with packaging instructions for debian/ubuntu by Claws-Mail developers.
-- FIXME: create .desktop file.
 - TODO: upstream appdata-file
 - TODO: Check if we can skip building documentation for _gdata_ dependency.
 - TODO: Check if we can integrate with NetworkManager. This feature is now disabled.
