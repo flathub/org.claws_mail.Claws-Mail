@@ -20,7 +20,7 @@ run: build
 	flatpak run --user $(APPID)
 
 repo: build
-	flatpak-builder --sandbox --export-only --repo repo build $(MANIFEST)
+	flatpak-builder --sandbox --export-only --repo repo build $(MANIFEST) && touch repo
 
 $(BUNDLE): repo
 	flatpak build-bundle repo $(BUNDLE) $(APPID)
