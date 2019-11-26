@@ -5,12 +5,12 @@
 .PHONY: install uninstall run validate clean
 
 APPID = org.claws_mail.Claws-Mail
+
 APPDATA = $(APPID).appdata.xml
 BUNDLE = $(APPID).bundle
 MANIFEST = $(APPID).json
-FLATHUB = flathub.json
 
-build: $(MANIFEST) $(APPDATA) $(FLATHUB)
+build: $(MANIFEST) $(APPDATA) flathub.json static/*
 	flatpak-builder --sandbox --force-clean build $(MANIFEST) && touch build
 
 install: build
@@ -33,3 +33,4 @@ validate:
 
 clean:
 	rm -rf build build.log repo $(BUNDLE)
+
