@@ -205,9 +205,9 @@
         "--enable-litehtml_viewer-plugin",
         "--enable-gdata-plugin",
         "--enable-bogofilter-plugin",
-	"--disable-perl-plugin",
-	"--disable-dillo-plugin",
-	"--disable-bsfilter-plugin"
+        "--disable-perl-plugin",
+        "--disable-dillo-plugin",
+        "--disable-bsfilter-plugin"
       ],
       "sources": [
         {
