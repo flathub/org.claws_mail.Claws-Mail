@@ -149,7 +149,8 @@
       "name": "libgdata",
       "buildsystem": "meson",
       "config-opts": [
-        "-Dgoa=disabled"
+        "-Dgoa=disabled",
+        "-Dgtk_doc=false"
       ],
       "sources": [
         {
