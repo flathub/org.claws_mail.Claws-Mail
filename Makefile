@@ -2,7 +2,7 @@
 # flatpak packaging instructions.
 #
 # SPDX-License-Identifier: MIT
-.PHONY: install uninstall run validate clean
+.PHONY: install uninstall run validate clean distclean
 
 APPID = org.claws_mail.Claws-Mail
 
@@ -33,4 +33,7 @@ validate:
 
 clean:
 	rm -rf build build.log repo $(BUNDLE)
+
+distclean: clean
+	rm -rf .flatpak-builder
 
