@@ -56,6 +56,8 @@ Plug-in with dependencies:
   - libuhttpmock
 - Bogofilter
   - bogofilter (cli filter application)
+- GPG
+  - pinentry
 
 Disabled plug-ins due to unresolved dependencies:
 - Dillo (assumes `dillo` is available)
