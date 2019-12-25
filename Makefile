@@ -5,6 +5,7 @@
 .PHONY: install uninstall run validate clean distclean
 
 APPID = org.claws_mail.Claws-Mail
+RUNCMD = /app/bin/claws-mail-wrapper.sh
 
 APPDATA = $(APPID).appdata.xml
 BUNDLE = $(APPID).bundle
@@ -17,7 +18,7 @@ install: build
 	flatpak-builder --sandbox --export-only --user --install build $(MANIFEST)
 
 run: build
-	flatpak run --user $(APPID)
+	flatpak-builder --run build $(MANIFEST) $(RUNCMD)
 
 repo: build
 	flatpak-builder --sandbox --export-only --repo repo build $(MANIFEST) && touch repo
