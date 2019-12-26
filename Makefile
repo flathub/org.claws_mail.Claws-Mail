@@ -14,11 +14,11 @@ MANIFEST = $(APPID).json
 build: $(MANIFEST) $(APPDATA) flathub.json static/*
 	flatpak-builder --sandbox --force-clean build $(MANIFEST) && touch build
 
-install: build
-	flatpak-builder --sandbox --export-only --user --install build $(MANIFEST)
-
 run: build
 	flatpak-builder --run build $(MANIFEST) $(RUNCMD)
+
+install: build
+	flatpak-builder --sandbox --export-only --user --install build $(MANIFEST)
 
 repo: build
 	flatpak-builder --sandbox --export-only --repo repo build $(MANIFEST) && touch repo
