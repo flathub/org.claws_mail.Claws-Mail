@@ -56,6 +56,8 @@ Plug-in with dependencies:
   - libuhttpmock
 - Bogofilter
   - bogofilter (cli filter application)
+- GPG
+  - pinentry
 
 Disabled plug-ins due to unresolved dependencies:
 - Dillo (assumes `dillo` is available)
@@ -67,7 +69,6 @@ Disabled plug-ins due to unresolved dependencies:
 Reminders for later consideration.
 
 - TODO: upstream appdata-file
-- TODO: Check if we can skip building documentation for _gdata_ dependency.
 - TODO: Check if we can integrate with NetworkManager. This feature is now disabled.
 - TODO: Investigate if building for i386 is possible.
 

@@ -33,17 +33,17 @@
   <screenshots>
     <screenshot>
       <image type="source">
-	https://raw.githubusercontent.com/flathub/org.claws_mail.Claws-Mail/2b960f7c43e9662cb830db2500255c5e35b0f1d0/screenshot-main.png
+          https://raw.githubusercontent.com/flathub/org.claws_mail.Claws-Mail/82e33d8f11ce35ec755840d31bb727c068b4d33b/screenshots/screenshot-main.png
       </image>
     </screenshot>
     <screenshot>
       <image type="source">
-	https://raw.githubusercontent.com/flathub/org.claws_mail.Claws-Mail/2b960f7c43e9662cb830db2500255c5e35b0f1d0/screenshot-compose.png
+          https://raw.githubusercontent.com/flathub/org.claws_mail.Claws-Mail/82e33d8f11ce35ec755840d31bb727c068b4d33b/screenshots/screenshot-compose.png
       </image>
     </screenshot>
     <screenshot>
       <image type="source">
-	https://raw.githubusercontent.com/flathub/org.claws_mail.Claws-Mail/2b960f7c43e9662cb830db2500255c5e35b0f1d0/screenshot-read.png
+          https://raw.githubusercontent.com/flathub/org.claws_mail.Claws-Mail/82e33d8f11ce35ec755840d31bb727c068b4d33b/screenshots/screenshot-read.png
       </image>
     </screenshot>
   </screenshots>

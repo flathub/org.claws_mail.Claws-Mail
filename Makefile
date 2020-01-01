@@ -2,22 +2,23 @@
 # flatpak packaging instructions.
 #
 # SPDX-License-Identifier: MIT
-.PHONY: install uninstall run validate clean
+.PHONY: install uninstall run validate clean distclean
 
 APPID = org.claws_mail.Claws-Mail
+RUNCMD = /app/bin/claws-mail-wrapper.sh
+
 APPDATA = $(APPID).appdata.xml
 BUNDLE = $(APPID).bundle
 MANIFEST = $(APPID).json
-FLATHUB = flathub.json
 
-build: $(MANIFEST) $(APPDATA) $(FLATHUB)
+build: $(MANIFEST) $(APPDATA) flathub.json static/*
 	flatpak-builder --sandbox --force-clean build $(MANIFEST) && touch build
 
 install: build
 	flatpak-builder --sandbox --export-only --user --install build $(MANIFEST)
 
 run: build
-	flatpak run --user $(APPID)
+	flatpak-builder --run build $(MANIFEST) $(RUNCMD)
 
 repo: build
 	flatpak-builder --sandbox --export-only --repo repo build $(MANIFEST) && touch repo
@@ -33,3 +34,7 @@ validate:
 
 clean:
 	rm -rf build build.log repo $(BUNDLE)
+
+distclean: clean
+	rm -rf .flatpak-builder
+
