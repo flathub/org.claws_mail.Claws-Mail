@@ -236,8 +236,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://claws-mail.org/releases/claws-mail-3.17.4.tar.gz",
-          "sha256": "adb3e361a7464d938e1d6f23a62433c89878c6e001792c5ca98d22ce5d4efa37"
+          "url": "https://claws-mail.org/releases/claws-mail-3.17.5.tar.gz",
+          "sha256": "4c0414afe5f0af10d681e8b8af2f903187ababa0707fde6b5b1abd340d9a40e9"
         }
       ]
     },

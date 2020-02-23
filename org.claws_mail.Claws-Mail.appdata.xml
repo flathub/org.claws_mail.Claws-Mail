@@ -49,6 +49,49 @@
   </screenshots>
 
   <releases>
+    <release version="3.17.5" date="2020-02-23">
+      <description>
+        <p>New in this release:</p>
+        <ul>
+          <li>Inline Git patches now have colour syntax highlighting. The colours of these, and patch attachments, are configurable on the 'Other' tab of the Display/Colors page of the general preferences.</li>
+          <li>The previously hidden preference, 'summary_from_show', is now configurable within the UI, on the 'Message List' tab of the Display/Summaries page of the general preferences, 'Displayed in From column [ ]'.</li>
+          <li>'Re-edit' has been added to the message context menu when in the Drafts folder.</li>
+          <li>Additional Date header formats are supported: "weekday, month, day, hh, mm, ss, year, zone", "weekday, month, day, hh, mm, ss, year"</li>
+          <li>LiteHtml viewer plugin: scrolling with the keyboard has been implemented.</li>
+          <li>The included tools/scripts have been updated: eud2gc.py converted to Python 3, tbird2claws.py converted to Python 3, tbird2claws.py converted to Python 3, google_search.pl has been replaced with ddg_search.pl (that is, duckduckgo.com instead of google.com), fix_date.sh and its documentation have been updated, multiwebsearch.pl 'fm' (freshmeat.net) has been removed; 'google' has been replaced by 'ddg' the outdated OOo2claws-mail.pl script has been removed</li>
+          <li>Updated manuals</li>
+          <li>Updated translations: British English, Catalan, Czech, Danish, Dutch, French, German, Russian, Slovak, Spanish, Swedish, Traditional Chinese, Turkish</li>
+	      </ul>
+	      <p>Bug fixes:</p>
+	      <ul>
+          <li>bug 2131, 'Focus stealing after mail check' [improved fix]</li>
+          <li>bug 4237, '403 is Forbidden not Unauthorized'</li>
+          <li>bug 4239, 'Preferences: Text Options Header Display modal is not modal' [sic]</li>
+          <li>bug 4248, 'Sup[p]ort C99 compilers in m4/spamassassin.m4'</li>
+          <li>bug 4253, 'Claws metadata included in MBOX exports'</li>
+          <li>bug 4257, 'claws-mail 3.17.4 breaks copy-pasting from emacs-gtk3'</li>
+          <li>bug 4277, 'INBOX being "read" automatically - being marked as read before being selected' [sic]</li>
+          <li>bug 4278, 'Mark all as read/unread does not belong to the message context menu'</li>
+          <li>bug 4305, 'goto folder UI confusing'</li>
+          <li>Fix crash in litehtml_viewer when  tag has no href</li>
+          <li>removed "The following file has been attached..." dialogue</li>
+          <li>MBOX import: give a better estimation of the time left and grey out widgets while importing</li>
+          <li>Fixed "vcard.c:238:2: warning: ‘strncpy’ output truncated before terminating nul copying as many bytes from a string as its length"</li>
+          <li>RSSyl: Fix handling deleted feed items where modified and published dates do not match</li>
+          <li>fix bolding of target folder</li>
+          <li>when creating a new account, don't pre-fill data from the default account</li>
+          <li>respect 'default selection' settings when moving a msg with manual filtering</li>
+          <li>Fix printing of empty pages when the selected part is rendered with a plugin not implementing print</li>
+          <li>Addressbook folder selection dialogs: make sure folder list is sorted and apply global prefs to get stripes in lists.</li>
+          <li>when user cancels the GPG signing passphrase dialogue, don't bother the user with an "error" dialogue</li>
+          <li>Fix imap keyword search. Libetpan assumes keyword search is a MUST but RFC states it is a MAY. Fix advanced search on MS Exchange</li>
+          <li>fix SHIFT+SPACE in msg list, moving in reverse revert pasting images as attachments</li>
+          <li>Fix help about command-line arguments that require a parameter.</li>
+          <li>Printing: only print as plain text if the part is of type text</li>
+          <li>fix a segfault with default info icon when trying to print a non-text part.</li>
+        </ul>
+      </description>
+    </release>
     <release version="3.17.4" date="2019-07-26">
       <description>
         <p>New in this release:</p>
