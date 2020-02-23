@@ -85,7 +85,6 @@ Reminders for later consideration.
   - Ensure that `gpg-agent` is running on the host before starting Claws-Mail, such that we can make `--filesystem=xdg-run/gnupg:ro` a persistent rule.
 - TODO: upstream appdata-file
 - TODO: Check if we can integrate with NetworkManager. This feature is now disabled.
-- TODO: Investigate if building for i386 is possible.
 
 <!-- NOTES
 
