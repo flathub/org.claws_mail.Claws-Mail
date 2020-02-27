@@ -32,6 +32,18 @@ Claws-Mail with the following plug-ins:
 - TNEF parser
 - vCalendar
 
+## Running Claws-Mail
+
+As _Claws-Mail_ inside the flatpak is fairly isolated from the host system, it will start and kill its own `gpg-agent` for internal use. Assuming your `~/.gnupg` has the appropriate keys, Claws-Mail will be able to sign/verify, encrypt/decrypt your email messages.
+
+In some cases, you will want to communicate directly with `gpg-agent` running on the host. For example, to provide access to smartcards. You can do this by starting Claws-Mail using: `flatpak run --filesystem=xdg-run/gnupg:ro org.claws_mail.Claws-Mail`.
+
+Or as a script: (halts if `gpg-agent` is not running)
+```
+#!/bin/sh
+gpg-agent && flatpak run --filesystem=xdg-run/gnupg:ro org.claws_mail.Claws-Mail
+```
+
 ## Packaging details
 
 ### Dependencies
@@ -68,9 +80,11 @@ Disabled plug-ins due to unresolved dependencies:
 
 Reminders for later consideration.
 
+- TODO: fix issue with contacting smartcards/yubikeys, either:
+  - Manage to get the `pcsc` socket working to facilitate pass-through.
+  - Ensure that `gpg-agent` is running on the host before starting Claws-Mail, such that we can make `--filesystem=xdg-run/gnupg:ro` a persistent rule.
 - TODO: upstream appdata-file
 - TODO: Check if we can integrate with NetworkManager. This feature is now disabled.
-- TODO: Investigate if building for i386 is possible.
 
 <!-- NOTES
 
