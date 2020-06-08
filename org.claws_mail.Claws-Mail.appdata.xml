@@ -49,6 +49,12 @@
   </screenshots>
 
   <releases>
+    <release version="3.17.5-1" date="2020-06-08">
+      <description>
+        <p>The Claws-Mail flatpak package is now based on Freedesktop.org platform instead of the Gnome platform.</p>
+        <p>There are no changes to Claws-Mail compared to previous flatpak.</p>
+      </description>
+    </release>
     <release version="3.17.5" date="2020-02-23">
       <description>
         <p>New in this release:</p>
