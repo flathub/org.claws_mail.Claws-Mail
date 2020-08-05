@@ -26,7 +26,7 @@ run: build
 	flatpak-builder --run build $(MANIFEST) $(RUNCMD)
 
 install: build
-	flatpak-builder --sandbox --export-only --user --install build $(MANIFEST)
+	flatpak-builder --sandbox --export-only --user --install build -y $(MANIFEST)
 
 repo: build
 	flatpak-builder --sandbox --export-only --repo repo build $(MANIFEST)
@@ -36,7 +36,7 @@ $(BUNDLE): repo
 	flatpak build-bundle repo $(BUNDLE) $(APPID)
 
 uninstall:
-	flatpak uninstall --user $(APPID)
+	flatpak uninstall -y --user $(APPID)
 
 validate:
 	flatpak install -y --system flathub org.freedesktop.appstream-glib
