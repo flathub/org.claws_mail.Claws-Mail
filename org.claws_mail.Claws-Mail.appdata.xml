@@ -49,6 +49,34 @@
   </screenshots>
 
   <releases>
+    <release version="3.17.6" date="2020-08-06">
+      <description>
+        <p>Claws-Mail updated to 3.17.6 and introduction of pcsc-lite for (hardware) smartcard support.</p>
+        <p>Claws Mail is a GTK+ based, user-friendly, lightweight, and fast email client.</p>
+        <p>New in this release:</p>
+        <ul>
+          <li>It is now possible to 'Inherit Folder properties and processing rules from parent folder' when creating new folders with the move message and copy message dialogues.</li>
+          <li>A Phishing warning is now shown when copying a phishing URL, (in addition to clicking a phishing URL).</li>
+          <li>The progress window when importing an mbox file is now more responsive.</li>
+          <li>A warning dialogue is shown if the selected privacy system is 'None' and automatic signing amd/or encrypting is enabled.</li>
+          <li>Python plugin: pkgconfig is now used to check for python2. This enables the Python plugin (which uses python2) to be built on newer systems which have both python2 and python3.</li>
+          <li>Add translation: Greek.</li>
+          <li>Updated translation: Polish.</li>
+        </ul>
+        <p>Bug fixes:</p>
+        <ul>
+          <li>bug 3922, minimize to tray on startup not working</li>
+          <li>bug 4220, generates files in cache without content</li>
+          <li>bug 4325, Following redirects when retrieving image</li>
+          <li>bug 4342, Import mbox file command doesn't work twice on a row</li>
+          <li>fix STARTTLS protocol violation</li>
+          <li>fix initial debug line</li>
+          <li>fix fat-fingered crash when v (hiding msgview) is pressed just before c (check signature)</li>
+          <li>fix non-translation of some Templates strings</li>
+        </ul>
+        <p>For further details of the numbered bugs and RFEs listed above see https://www.claws-mail.org/bug/[BUG NUMBER]</p>
+      </description>
+    </release>
     <release version="3.17.5-1" date="2020-06-08">
       <description>
         <p>The Claws-Mail flatpak package is now based on Freedesktop.org platform instead of the Gnome platform.</p>
