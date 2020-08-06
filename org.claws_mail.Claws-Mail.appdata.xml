@@ -74,7 +74,7 @@
           <li>fix fat-fingered crash when v (hiding msgview) is pressed just before c (check signature)</li>
           <li>fix non-translation of some Templates strings</li>
         </ul>
-        <p>For further details of the numbered bugs and RFEs listed above see https://www.claws-mail.org/bug/[BUG NUMBER]</p>
+        <p>For further details of the numbered bugs and RFEs listed above see www.claws-mail.org/bug/[BUG NUMBER]</p>
       </description>
     </release>
     <release version="3.17.5-1" date="2020-06-08">
