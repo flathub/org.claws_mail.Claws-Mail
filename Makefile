@@ -40,7 +40,7 @@ uninstall:
 
 validate:
 	flatpak install -y --system flathub org.freedesktop.appstream-glib
-	flatpak run org.freedesktop.appstream-glib validate-strict $(APPDATA)
+	flatpak run org.freedesktop.appstream-glib validate $(APPDATA)
 
 clean:
 	rm -rf build build.log repo $(BUNDLE)
