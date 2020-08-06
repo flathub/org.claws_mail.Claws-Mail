@@ -3,10 +3,11 @@
   "runtime": "org.freedesktop.Platform",
   "runtime-version": "19.08",
   "sdk": "org.freedesktop.Sdk",
-  "command": "claws-mail",
+  "command": "claws-mail-wrapper.sh",
   "finish-args": [
     "--socket=x11",
     "--socket=wayland",
+    "--socket=pcsc",
     "--share=ipc",
     "--share=network",
     "--filesystem=home"
@@ -256,26 +257,48 @@
       ]
     },
     {
-        "name": "pinentry",
-        "config-opts": [
-            "--enable-pinentry-gtk2",
-            "--disable-ncurses",
-            "--disable-fallback-curses",
-            "--disable-pinentry-curses",
-            "--disable-pinentry-emacs",
-            "--disable-pinentry-gnome3",
-            "--disable-pinentry-qt5",
-            "--disable-pinentry-tty",
-            "--disable-pinentry-tqt",
-            "--disable-pinentry-fltk"
-        ],
-        "sources": [
-            {
-                "type": "archive",
-                "url": "https://www.gnupg.org/ftp/gcrypt/pinentry/pinentry-1.1.0.tar.bz2",
-                "sha256": "68076686fa724a290ea49cdf0d1c0c1500907d1b759a3bcbfbec0293e8f56570"
-            }
-        ]
+      "name": "pcsc-lite",
+      "config-opts": [
+        "--disable-libudev",
+        "--disable-libsystemd",
+        "--without-systemdsystemunitdir",
+        "--disable-serial",
+        "--disable-usb",
+        "--disable-documentation"
+      ],
+      "post-install": [
+        "rm /app/sbin/pcscd",
+        "rmdir /app/sbin || true"
+      ],
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://github.com/LudovicRousseau/PCSC/archive/pcsc-1.9.0.tar.gz",
+          "sha256": "9e9b332bf8d37123d0c29e0ac359140b64cfd2bdf7be341a8d39e49fda592df2"
+        }
+      ]
+    },
+    {
+      "name": "pinentry",
+      "config-opts": [
+        "--enable-pinentry-gtk2",
+        "--disable-ncurses",
+        "--disable-fallback-curses",
+        "--disable-pinentry-curses",
+        "--disable-pinentry-emacs",
+        "--disable-pinentry-gnome3",
+        "--disable-pinentry-qt5",
+        "--disable-pinentry-tty",
+        "--disable-pinentry-tqt",
+        "--disable-pinentry-fltk"
+      ],
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://www.gnupg.org/ftp/gcrypt/pinentry/pinentry-1.1.0.tar.bz2",
+          "sha256": "68076686fa724a290ea49cdf0d1c0c1500907d1b759a3bcbfbec0293e8f56570"
+        }
+      ]
     },
     {
       "name": "claws-mail",
@@ -294,8 +317,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://claws-mail.org/releases/claws-mail-3.17.5.tar.gz",
-          "sha256": "f79e4c7f089d08e6b2b3323a90b6f46991a154ce168ba4a829d593b7a5768c7b"
+          "url": "https://claws-mail.org/releases/claws-mail-3.17.6.tar.gz",
+          "sha256": "8577673a8c238dc5c4481ca2b10373907995a340d3b8826f77b598601afadc70"
         }
       ]
     },
