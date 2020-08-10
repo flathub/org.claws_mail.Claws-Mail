@@ -39,7 +39,7 @@ uninstall:
 	flatpak uninstall -y --user $(APPID)
 
 validate:
-	flatpak install -y --system flathub org.freedesktop.appstream-glib
+	flatpak info org.freedesktop.appstream-glib > /dev/null || flatpak install -y --system flathub org.freedesktop.appstream-glib
 	flatpak run org.freedesktop.appstream-glib validate $(APPDATA)
 
 clean:
