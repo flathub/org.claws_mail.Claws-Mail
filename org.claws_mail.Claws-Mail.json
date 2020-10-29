@@ -317,8 +317,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://claws-mail.org/releases/claws-mail-3.17.8.tar.xz",
-          "sha256": "cdb7b2814995d6f4a9c3b1f0bc1467ed5c3cf2a5e0da1730aaa25a8accafddaf"
+          "url": "https://claws-mail.org/releases/claws-mail-3.99.0.tar.gz",
+          "sha256": "dfa61dc7573e092c646ec2ec47bd504922f349bc7dd77dc69eefa18ddff3ac3d"
         }
       ]
     },
