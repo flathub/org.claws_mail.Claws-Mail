@@ -49,6 +49,18 @@
   </screenshots>
 
   <releases>
+    <release version="3.17.8" date="2020-10-19">
+      <description>
+        <p>Claws-Mail updated to 3.17.8.</p>
+        <p>Claws Mail is a GTK+ based, user-friendly, lightweight, and fast email client.</p>
+        <p>This is a bugfix release:</p>
+        <ul>
+          <li>Shielded template's |program{} and |attach_program{} so that the command-line that is executed does not allow sequencing such as with &amp;&amp; || ;, preventing possible execution of nasty, or at least unexpected, commands</li>
+          <li>fixed bug 4376, 'Litehtml breaks locale'</li>
+          <li>updated English, French, and Spanish manuals</li>
+        </ul>
+      </description>
+    </release>
     <release version="3.17.7" date="2020-09-28">
       <description>
         <p>Claws-Mail updated to 3.17.7.</p>
