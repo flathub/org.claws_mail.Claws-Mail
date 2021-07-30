@@ -5,11 +5,12 @@
   "sdk": "org.freedesktop.Sdk",
   "command": "claws-mail-wrapper.sh",
   "finish-args": [
+    "--share=ipc",
+    "--share=network",
     "--socket=x11",
     "--socket=wayland",
     "--socket=pcsc",
-    "--share=ipc",
-    "--share=network",
+    "--talk-name=org.freedesktop.Notifications",
     "--filesystem=home"
   ],
   "modules": [
