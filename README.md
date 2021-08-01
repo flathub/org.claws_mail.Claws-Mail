@@ -68,6 +68,10 @@ Disabled plug-ins due to unresolved dependencies:
 
 Reminders for later consideration.
 
+- TODO: update dependencies
+  - libpoppler-glib 0.90.1 < poppler-20.* < poppler-21.*
+  - libgdata-0.17.13 < libgdata-0.18.1
+- TODO: upgrade Claws-Mail to 4.0. (<https://claws-mail.org//releases/claws-mail-4.0.0.tar.xz>, `4af2bd26a5d91eacb2a9c09f67a6a46c2222b40817c1f525dc050bdc7b0ee475`)
 - TODO: upstream appdata-file
 - TODO: Check if we can integrate with NetworkManager. This feature is now disabled.
 

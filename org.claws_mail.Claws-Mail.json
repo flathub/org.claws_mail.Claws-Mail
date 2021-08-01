@@ -56,8 +56,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://github.com/uclouvain/openjpeg/archive/v2.3.1.tar.gz",
-          "sha256": "63f5a4713ecafc86de51bfad89cc07bb788e9bba24ebbf0c4ca637621aadb6a9"
+          "url": "https://github.com/uclouvain/openjpeg/archive/refs/tags/v2.4.0.tar.gz",
+          "sha256": "8702ba68b442657f11aaeb2b338443ca8d5fb95b0d845757968a7be31ef7f16d"
         }
       ],
       "cleanup": [
@@ -75,8 +75,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://gitlab.freedesktop.org/poppler/poppler/-/archive/poppler-0.90.1/poppler-poppler-0.90.1.tar.gz",
-          "sha256": "a07cbd476c5522609da4e62a6c28e37f4b1e092ed538901f9c7472ef94b453ae"
+          "url": "https://gitlab.freedesktop.org/poppler/poppler/-/archive/poppler-0.90.1/poppler-poppler-0.90.1.tar.bz2",
+          "sha256": "3c1d4c83d72115fa2a261e3c1e00ae9d4524ca325e7fb0047f545a7dd3e88e3f"
         }
       ],
       "cleanup": [
@@ -93,8 +93,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://github.com/libical/libical/releases/download/v3.0.8/libical-3.0.8.tar.gz",
-          "sha256": "09fecacaf75ba5a242159e3a9758a5446b5ce4d0ab684f98a7040864e1d1286f"
+          "url": "https://github.com/libical/libical/releases/download/v3.0.10/libical-3.0.10.tar.gz",
+          "sha256": "f933b3e6cf9d56a35bb5625e8e4a9c3a50239a85aea05ed842932c1a1dc336b4"
         }
       ],
       "cleanup": [
@@ -173,8 +173,8 @@
         "sources": [
             {
                 "type": "archive",
-                "url": "https://gitlab.com/graphviz/graphviz/-/archive/2.44.0/graphviz-2.44.0.tar.bz2",
-                "sha256": "eaff61ce05bf8196c596097bab6310fa6e7e96ee908a199a4bc83fbd5e7082d6"
+                "url": "https://gitlab.com/graphviz/graphviz/-/archive/2.48.0/graphviz-2.48.0.tar.bz2",
+                "sha256": "6ba7b075c3820e7a40fbc8879ad25621f65a6f5fec79e41c7987650ac3f727ae"
             }
         ],
         "cleanup": [
@@ -193,8 +193,8 @@
         "sources": [
             {
                 "type": "archive",
-                "url": "https://download.gnome.org/sources/vala/0.49/vala-0.49.2.tar.xz",
-                "sha256": "8f7477bd309ff0ff4ca57a06c10efab4157485ccfbfaf2fbf1bc57c3edc65779"
+                "url": "https://download-fallback.gnome.org/sources/vala/0.52/vala-0.52.4.tar.xz",
+                "sha256": "ecde520e5160e659ee699f8b1cdc96065edbd44bbd08eb48ef5f2506751fdf31"
             }
         ],
         "cleanup": [
@@ -211,13 +211,14 @@
       "buildsystem": "meson",
       "config-opts": [
         "-Dgoa=disabled",
+        "-Dgnome=disabled",
         "-Dgtk_doc=false"
       ],
       "sources": [
         {
           "type": "archive",
-          "url": "https://gitlab.gnome.org/GNOME/libgdata/-/archive/0.17.10/libgdata-0.17.10.tar.gz",
-          "sha256": "3f349002c078485ff5e9654a49fb382cac8290e50294eadd5349389166f57b91"
+          "url": "https://gitlab.gnome.org/GNOME/libgdata/-/archive/0.17.13/libgdata-0.17.13.tar.bz2",
+          "sha256": "13b2d0d6a2763e56f96dadd6f53e0158129b92d4a46295bfe38b1dedc3b80629"
         }
       ],
       "cleanup": [
@@ -274,8 +275,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://github.com/LudovicRousseau/PCSC/archive/pcsc-1.9.0.tar.gz",
-          "sha256": "9e9b332bf8d37123d0c29e0ac359140b64cfd2bdf7be341a8d39e49fda592df2"
+          "url": "https://github.com/LudovicRousseau/PCSC/archive/refs/tags/1.9.1.tar.gz",
+          "sha256": "1eaad042a8a8f9d398bf3fc27a35e516e4f0b90437a0e11a46d280ddd9c5848d"
         }
       ]
     },
@@ -296,8 +297,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://www.gnupg.org/ftp/gcrypt/pinentry/pinentry-1.1.0.tar.bz2",
-          "sha256": "68076686fa724a290ea49cdf0d1c0c1500907d1b759a3bcbfbec0293e8f56570"
+          "url": "https://www.gnupg.org/ftp/gcrypt/pinentry/pinentry-1.1.1.tar.bz2",
+          "sha256": "cd12a064013ed18e2ee8475e669b9f58db1b225a0144debdb85a68cecddba57f"
         }
       ]
     },
