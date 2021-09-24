@@ -2,6 +2,9 @@
 
 The flathub recipe for building [Claws-Mail](https://claws-mail.org) as a flatpak distributable package.
 
+Debug extension: `org.claws_mail.Claws_Mail.Debug`. (`flatpak install flathub org.claws_mail.Claws_Mail.Debug`)  
+The [flatpak documentation on debugging](https://docs.flatpak.org/en/latest/debugging.html) explains debugging flatpaks in more detail.
+
 ## Functionality
 
 Claws-Mail with the following plug-ins:
