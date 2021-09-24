@@ -26,7 +26,6 @@
         }
       ],
       "cleanup": [
-	      "/lib/debug",
 	      "/include",
 	      "*.a",
 	      "*.la"
@@ -44,7 +43,6 @@
       ],
       "cleanup": [
 	      "/lib/pkgconfig",
-	      "/lib/debug",
 	      "/include",
 	      "*.a",
 	      "*.la"
@@ -63,7 +61,6 @@
       "cleanup": [
 	      "/lib/pkgconfig",
 	      "/lib/openjpeg-*",
-	      "/lib/debug",
 	      "/include",
 	      "*.a",
 	      "*.la"
@@ -81,7 +78,6 @@
       ],
       "cleanup": [
 	      "/lib/pkgconfig",
-	      "/lib/debug",
 	      "/include",
 	      "*.a",
 	      "*.la"
@@ -99,7 +95,6 @@
       ],
       "cleanup": [
 	      "/lib/pkgconfig",
-	      "/lib/debug",
 	      "/lib/cmake",
 	      "/include",
 	      "*.a",
@@ -118,7 +113,6 @@
       ],
       "cleanup": [
 	      "/lib/pkgconfig",
-	      "/lib/debug",
 	      "/include",
 	      "*.a",
 	      "*.la"
@@ -142,7 +136,6 @@
       ],
       "cleanup": [
 	      "/lib/pkgconfig",
-	      "/lib/debug",
 	      "/include",
 	      "*.a",
 	      "*.la"
@@ -160,7 +153,6 @@
       ],
       "cleanup": [
 	      "/lib/pkgconfig",
-	      "/lib/debug",
 	      "/include",
 	      "*.a",
 	      "*.la"
@@ -179,7 +171,6 @@
         ],
         "cleanup": [
             "/libexec/*",
-            "/lib/debug",
             "/lib/pkgconfig",
             "/include",
             "*.a",
@@ -199,7 +190,6 @@
         ],
         "cleanup": [
             "/libexec/*",
-            "/lib/debug",
             "/lib/pkgconfig",
             "/include",
             "*.a",
@@ -223,7 +213,6 @@
       ],
       "cleanup": [
 	      "/libexec/*",
-	      "/lib/debug",
 	      "/lib/pkgconfig",
 	      "/include",
 	      "*.a",
@@ -255,7 +244,6 @@
         }
       ],
       "cleanup": [
-	      "/lib/debug"
       ]
     },
     {
