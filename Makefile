@@ -2,11 +2,12 @@
 # flatpak packaging instructions.
 #
 # SPDX-License-Identifier: MIT
-.PHONY: install uninstall run validate clean distclean shell
+.PHONY: install uninstall build-shell run run-shell validate clean distclean shell
 
 APPID = org.claws_mail.Claws-Mail
 RUNCMD = /app/bin/claws-mail-wrapper.sh
 
+# Prescribed variables: changing these is not necessary.
 APPDATA = $(APPID).appdata.xml
 BUNDLE = $(APPID).bundle
 MANIFEST = $(APPID).json
@@ -15,15 +16,18 @@ build: $(MANIFEST) $(APPDATA) flathub.json static/*
 	flatpak-builder --sandbox --force-clean build $(MANIFEST)
 	touch build
 
-shell: build
+build-shell: build
 ifeq ($(MODULE),)
 	@echo "MODULE=modulename is missing."
 	@exit 1
 endif
-	flatpak-builder --sandbox --force-clean --build-shell=$(MODULE) build $(MANIFEST)
+	flatpak-builder --sandbox --build-shell=$(MODULE) build $(MANIFEST)
 
 run: build
 	flatpak-builder --run build $(MANIFEST) $(RUNCMD)
+
+run-shell: build
+	flatpak-builder --run build $(MANIFEST) /bin/sh
 
 install: build
 	flatpak-builder --sandbox --export-only --user --install build -y $(MANIFEST)
