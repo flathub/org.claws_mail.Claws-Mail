@@ -49,6 +49,36 @@
   </screenshots>
 
   <releases>
+    <release version="3.18.0" date="2021-07-10">
+      <description>
+        <p>Claws-Mail updated to 3.18.0.</p>
+        <ul>
+          <li>Support for the OAuth2 authorisation protocol has been added for IMAP, POP and SMTP using custom, user-generated client IDs</li>
+          <li>The option 'Save (X-)Face in address book if possible' has been added to the /Message View/Text Options preferences page</li>
+          <li>The Image Viewer has been reworked. New options have been added to /Message View/Image Viewer: when resizing images, either fit the image width or fit the image height to the available space</li>
+          <li>When re-editing a saved message, it is now possible to use /Options/Remove References</li>
+          <li>It is now possible to attempt to retrieve a missing GPG key via WKD</li>
+          <li>The man page has been updated</li>
+          <li>Updated translations: Brazilian Portuguese, British English, Catalan, Czech, Danish, Dutch, French, Polish, Romanian, Russian, Slovak, Spanish, Traditional Chinese, Turkish</li>
+        </ul>
+        <p>Bug fixes:</p>
+        <ul>
+          <li>Bug 2411, 'quicksearch_history content partially written to stdout</li>
+          <li>Bug 4326, 'Xft.dpi != 96 messes with text display in litehtml viewer'</li>
+          <li>Bug 4394, 'folder processing runs on startup even if all rules are disabled'</li>
+          <li>Bug 4431, 'folder chmod doesn't affect .claws_mark and .claws_cache files'</li>
+          <li>Bug 4445, 'Draft folder on shared storage does not honour chmod settings'</li>
+          <li>Bug 4447, '--enable-deprecated and --disable-deprecated build flags have same effect'</li>
+          <li>Bug 4455, 'Potential memory leak in string_table_new()'</li>
+          <li>Bug 4473, 'segmentation fault opening Libravatar config'</li>
+          <li>Stop WM's X button from causing GPG key fetch attempt</li>
+          <li>Make fancy respect default font size for messageview</li>
+          <li>Harden link checker before accepting click</li>
+          <li>Non-display of (X-)Face when prefs_common.enable_avatars is AVATARS_ENABLE_RENDER (2)</li>
+          <li>Debian bug #983778, 'Segfault on selecting empty 'X-Face' custom header'</li>
+        </ul>
+      </description>
+    </release>
     <release version="3.17.8" date="2020-10-19">
       <description>
         <p>Claws-Mail updated to 3.17.8.</p>
@@ -78,12 +108,12 @@
         </ul>
         <p>Bug fixes:</p>
         <ul>
-          <li>bug 4313, 'Recursion stack overflow with rebuilding folder tree'</li>
-          <li>bug 4372, '[pl_PL] Crash after "Send later" without recipient and then "Close"'</li>
-          <li>bug 4373, 'attach mailto URI double free'</li>
-          <li>bug 4374, 'insert mailto URI misses checks'</li>
-          <li>bug 4384, 'U+00AD (soft hyphen) changed to space in Subject'</li>
-          <li>bug 4386, 'Allow Sieve config without userid without warning'</li>
+          <li>Bug 4313, 'Recursion stack overflow with rebuilding folder tree'</li>
+          <li>Bug 4372, '[pl_PL] Crash after "Send later" without recipient and then "Close"'</li>
+          <li>Bug 4373, 'attach mailto URI double free'</li>
+          <li>Bug 4374, 'insert mailto URI misses checks'</li>
+          <li>Bug 4384, 'U+00AD (soft hyphen) changed to space in Subject'</li>
+          <li>Bug 4386, 'Allow Sieve config without userid without warning'</li>
           <li>Add missing SSL settings when cloning accounts.</li>
           <li>Parsing of command-line arguments.</li>
           <li>PGP Core plugin: fix segv in address completion with a keyring.</li>
@@ -108,14 +138,14 @@
         </ul>
         <p>Bug fixes:</p>
         <ul>
-          <li>bug 3922, minimize to tray on startup not working</li>
-          <li>bug 4220, generates files in cache without content</li>
-          <li>bug 4325, Following redirects when retrieving image</li>
-          <li>bug 4342, Import mbox file command doesn't work twice on a row</li>
-          <li>fix STARTTLS protocol violation</li>
-          <li>fix initial debug line</li>
-          <li>fix fat-fingered crash when v (hiding msgview) is pressed just before c (check signature)</li>
-          <li>fix non-translation of some Templates strings</li>
+          <li>Bug 3922, minimize to tray on startup not working</li>
+          <li>Bug 4220, generates files in cache without content</li>
+          <li>Bug 4325, Following redirects when retrieving image</li>
+          <li>Bug 4342, Import mbox file command doesn't work twice on a row</li>
+          <li>Fix STARTTLS protocol violation</li>
+          <li>Fix initial debug line</li>
+          <li>Fix fat-fingered crash when v (hiding msgview) is pressed just before c (check signature)</li>
+          <li>Fix non-translation of some Templates strings</li>
         </ul>
         <p>For further details of the numbered bugs and RFEs listed above see www.claws-mail.org/bug/[BUG NUMBER]</p>
       </description>
@@ -141,31 +171,31 @@
 	      </ul>
 	      <p>Bug fixes:</p>
 	      <ul>
-          <li>bug 2131, 'Focus stealing after mail check' [improved fix]</li>
-          <li>bug 4237, '403 is Forbidden not Unauthorized'</li>
-          <li>bug 4239, 'Preferences: Text Options Header Display modal is not modal' [sic]</li>
-          <li>bug 4248, 'Sup[p]ort C99 compilers in m4/spamassassin.m4'</li>
-          <li>bug 4253, 'Claws metadata included in MBOX exports'</li>
-          <li>bug 4257, 'claws-mail 3.17.4 breaks copy-pasting from emacs-gtk3'</li>
-          <li>bug 4277, 'INBOX being "read" automatically - being marked as read before being selected' [sic]</li>
-          <li>bug 4278, 'Mark all as read/unread does not belong to the message context menu'</li>
-          <li>bug 4305, 'goto folder UI confusing'</li>
+          <li>Bug 2131, 'Focus stealing after mail check' [improved fix]</li>
+          <li>Bug 4237, '403 is Forbidden not Unauthorized'</li>
+          <li>Bug 4239, 'Preferences: Text Options Header Display modal is not modal' [sic]</li>
+          <li>Bug 4248, 'Sup[p]ort C99 compilers in m4/spamassassin.m4'</li>
+          <li>Bug 4253, 'Claws metadata included in MBOX exports'</li>
+          <li>Bug 4257, 'claws-mail 3.17.4 breaks copy-pasting from emacs-gtk3'</li>
+          <li>Bug 4277, 'INBOX being "read" automatically - being marked as read before being selected' [sic]</li>
+          <li>Bug 4278, 'Mark all as read/unread does not belong to the message context menu'</li>
+          <li>Bug 4305, 'goto folder UI confusing'</li>
           <li>Fix crash in litehtml_viewer when  tag has no href</li>
-          <li>removed "The following file has been attached..." dialogue</li>
+          <li>Removed "The following file has been attached..." dialogue</li>
           <li>MBOX import: give a better estimation of the time left and grey out widgets while importing</li>
           <li>Fixed "vcard.c:238:2: warning: ‘strncpy’ output truncated before terminating nul copying as many bytes from a string as its length"</li>
           <li>RSSyl: Fix handling deleted feed items where modified and published dates do not match</li>
-          <li>fix bolding of target folder</li>
-          <li>when creating a new account, don't pre-fill data from the default account</li>
-          <li>respect 'default selection' settings when moving a msg with manual filtering</li>
+          <li>Fix bolding of target folder</li>
+          <li>When creating a new account, don't pre-fill data from the default account</li>
+          <li>Respect 'default selection' settings when moving a msg with manual filtering</li>
           <li>Fix printing of empty pages when the selected part is rendered with a plugin not implementing print</li>
           <li>Addressbook folder selection dialogs: make sure folder list is sorted and apply global prefs to get stripes in lists.</li>
           <li>when user cancels the GPG signing passphrase dialogue, don't bother the user with an "error" dialogue</li>
           <li>Fix imap keyword search. Libetpan assumes keyword search is a MUST but RFC states it is a MAY. Fix advanced search on MS Exchange</li>
-          <li>fix SHIFT+SPACE in msg list, moving in reverse revert pasting images as attachments</li>
+          <li>Fix SHIFT+SPACE in msg list, moving in reverse revert pasting images as attachments</li>
           <li>Fix help about command-line arguments that require a parameter.</li>
           <li>Printing: only print as plain text if the part is of type text</li>
-          <li>fix a segfault with default info icon when trying to print a non-text part.</li>
+          <li>Fix a segfault with default info icon when trying to print a non-text part.</li>
         </ul>
       </description>
     </release>
