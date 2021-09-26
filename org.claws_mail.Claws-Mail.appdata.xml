@@ -49,6 +49,11 @@
   </screenshots>
 
   <releases>
+    <release version="3.18.0-1" date="2021-07-10">
+      <description>
+        <p>Preserved debug symbols for dependencies.</p>
+      </description>
+    </release>
     <release version="3.18.0" date="2021-07-10">
       <description>
         <p>Claws-Mail updated to 3.18.0.</p>
