@@ -21,8 +21,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://github.com/dinhviethoa/libetpan/archive/1.9.4.tar.gz",
-          "sha256": "82ec8ea11d239c9967dbd1717cac09c8330a558e025b3e4dc6a7594e80d13bb1"
+          "url": "https://github.com/dinhvh/libetpan/archive/80f0f515555de2798c6984db507d406d0153f1f5.zip",
+          "sha256": "0e6b6d08721df3c8f0036547e963d313d6a130cefe881c8e12f6dc46b347a68f"
         }
       ],
       "cleanup": [
