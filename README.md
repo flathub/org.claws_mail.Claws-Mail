@@ -5,6 +5,8 @@ The flathub recipe for building [Claws-Mail](https://claws-mail.org) as a flatpa
 Debug extension: `org.claws_mail.Claws_Mail.Debug`. (`flatpak install flathub org.claws_mail.Claws_Mail.Debug`)  
 The [flatpak documentation on debugging](https://docs.flatpak.org/en/latest/debugging.html) explains debugging flatpaks in more detail.
 
+GnuPG -- and smartcards and security keys -- are supported. Make sure `gpg-agent` is running on the host system and the socket is available at the default location: `$XDG_RUNTIME_DIR/gnupg`.
+
 ## Functionality
 
 Claws-Mail with the following plug-ins:
@@ -44,7 +46,7 @@ The dependencies are as follows. In addition, the dependencies are in-order in t
 Claws-Mail dependencies:
 - libetpan
 
-Plug-in with dependencies:
+Plug-ins with their dependencies:
 - TNEF
   - libytnef
 - PDF-viewer
@@ -59,8 +61,6 @@ Plug-in with dependencies:
   - libuhttpmock
 - Bogofilter
   - bogofilter (cli filter application)
-- GPG
-  - pinentry
 
 Disabled plug-ins due to unresolved dependencies:
 - Dillo (assumes `dillo` is available)
@@ -71,10 +71,6 @@ Disabled plug-ins due to unresolved dependencies:
 
 Reminders for later consideration.
 
-- TODO: update dependencies
-  - libpoppler-glib 0.90.1 < poppler-20.* < poppler-21.*
-  - libgdata-0.17.13 < libgdata-0.18.1
-- TODO: upgrade Claws-Mail to 4.0. (<https://claws-mail.org//releases/claws-mail-4.0.0.tar.xz>, `4af2bd26a5d91eacb2a9c09f67a6a46c2222b40817c1f525dc050bdc7b0ee475`)
 - TODO: upstream appdata-file
 - TODO: Check if we can integrate with NetworkManager. This feature is now disabled.
 

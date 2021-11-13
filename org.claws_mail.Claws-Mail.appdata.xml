@@ -49,6 +49,13 @@
   </screenshots>
 
   <releases>
+    <release version="4.0.0" date="2021-11-12">
+        <p>Claws-Mail updated to 4.0.0</p>
+        <ul>
+            <li>First release using GTK-3 toolkit.</li>
+        </ul>
+        <p><i>Flatpak packaging note</i>: the gpg-agent will no longer be started inside the flatpak package if it is not running. Please make sure that gpg-agent is running on the host system if you rely on access to smartcards/security keys.</p>
+    </release>
     <release version="3.18.0-1" date="2021-07-10">
       <description>
         <p>Preserved debug symbols for dependencies.</p>

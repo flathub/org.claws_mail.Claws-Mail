@@ -1,20 +1,19 @@
 {
   "app-id": "org.claws_mail.Claws-Mail",
   "runtime": "org.freedesktop.Platform",
-  "runtime-version": "20.08",
+  "runtime-version": "21.08",
   "sdk": "org.freedesktop.Sdk",
-  "command": "claws-mail-wrapper.sh",
+  "command": "/app/bin/claws-mail",
   "finish-args": [
     "--share=ipc",
     "--share=network",
     "--socket=x11",
     "--socket=wayland",
-    "--socket=pcsc",
     "--talk-name=org.freedesktop.Notifications",
-    "--filesystem=home"
+    "--filesystem=home",
+    "--filesystem=xdg-run/gnupg:ro"
   ],
   "modules": [
-    "shared-modules/gtk2/gtk2.json",
     {
       "name": "libetpan",
       "buildsystem": "autotools",
@@ -26,9 +25,10 @@
         }
       ],
       "cleanup": [
-	      "/include",
-	      "*.a",
-	      "*.la"
+        "/lib/pkgconfig",
+        "/include",
+        "*.a",
+        "*.la"
       ]
     },
     {
@@ -42,10 +42,10 @@
         }
       ],
       "cleanup": [
-	      "/lib/pkgconfig",
-	      "/include",
-	      "*.a",
-	      "*.la"
+        "/lib/pkgconfig",
+        "/include",
+        "*.a",
+        "*.la"
       ]
     },
     {
@@ -59,28 +59,31 @@
         }
       ],
       "cleanup": [
-	      "/lib/pkgconfig",
-	      "/lib/openjpeg-*",
-	      "/include",
-	      "*.a",
-	      "*.la"
+        "/lib/pkgconfig",
+        "/lib/openjpeg-*",
+        "/include",
+        "*.a",
+        "*.la"
       ]
     },
     {
       "name": "libpoppler-glib",
       "buildsystem": "cmake-ninja",
+      "config-opts": [
+          "-DENABLE_BOOST=OFF"
+      ],
       "sources": [
         {
           "type": "archive",
-          "url": "https://gitlab.freedesktop.org/poppler/poppler/-/archive/poppler-0.90.1/poppler-poppler-0.90.1.tar.bz2",
-          "sha256": "3c1d4c83d72115fa2a261e3c1e00ae9d4524ca325e7fb0047f545a7dd3e88e3f"
+          "url": "https://gitlab.freedesktop.org/poppler/poppler/-/archive/poppler-21.09.0/poppler-poppler-21.09.0.tar.bz2",
+          "sha256": "6de996a2d3ea967afedf784f7d072047f30b53ddd951cdf6d4d1f2bc5bd6301a"
         }
       ],
       "cleanup": [
-	      "/lib/pkgconfig",
-	      "/include",
-	      "*.a",
-	      "*.la"
+        "/lib/pkgconfig",
+        "/include",
+        "*.a",
+        "*.la"
       ]
     },
     {
@@ -94,11 +97,12 @@
         }
       ],
       "cleanup": [
-	      "/lib/pkgconfig",
-	      "/lib/cmake",
-	      "/include",
-	      "*.a",
-	      "*.la"
+        "/libexec",
+        "/lib/pkgconfig",
+        "/lib/cmake",
+        "/include",
+        "*.a",
+        "*.la"
       ]
     },
     {
@@ -112,10 +116,10 @@
         }
       ],
       "cleanup": [
-	      "/lib/pkgconfig",
-	      "/include",
-	      "*.a",
-	      "*.la"
+        "/lib/pkgconfig",
+        "/include",
+        "*.a",
+        "*.la"
       ]
     },
     {
@@ -135,10 +139,10 @@
         }
       ],
       "cleanup": [
-	      "/lib/pkgconfig",
-	      "/include",
-	      "*.a",
-	      "*.la"
+        "/lib/pkgconfig",
+        "/include",
+        "*.a",
+        "*.la"
       ]
     },
     {
@@ -152,49 +156,49 @@
         }
       ],
       "cleanup": [
-	      "/lib/pkgconfig",
-	      "/include",
-	      "*.a",
-	      "*.la"
+        "/lib/pkgconfig",
+        "/include",
+        "*.a",
+        "*.la"
       ]
     },
     {
-        "name": "graphviz",
-        "buildsystem": "autotools",
-        "config-opts": [],
-        "sources": [
-            {
-                "type": "archive",
-                "url": "https://gitlab.com/graphviz/graphviz/-/archive/2.48.0/graphviz-2.48.0.tar.bz2",
-                "sha256": "6ba7b075c3820e7a40fbc8879ad25621f65a6f5fec79e41c7987650ac3f727ae"
-            }
-        ],
-        "cleanup": [
-            "/libexec/*",
-            "/lib/pkgconfig",
-            "/include",
-            "*.a",
-            "*.la"
-        ]
+      "name": "graphviz",
+      "buildsystem": "autotools",
+      "config-opts": [],
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://gitlab.com/graphviz/graphviz/-/archive/2.48.0/graphviz-2.48.0.tar.bz2",
+          "sha256": "6ba7b075c3820e7a40fbc8879ad25621f65a6f5fec79e41c7987650ac3f727ae"
+        }
+      ],
+      "cleanup": [
+        "/libexec",
+        "/lib/pkgconfig",
+        "/include",
+        "*.a",
+        "*.la"
+      ]
     },
     {
-        "name": "vala",
-        "buildsystem": "autotools",
-        "config-opts": [],
-        "sources": [
-            {
-                "type": "archive",
-                "url": "https://download-fallback.gnome.org/sources/vala/0.52/vala-0.52.4.tar.xz",
-                "sha256": "ecde520e5160e659ee699f8b1cdc96065edbd44bbd08eb48ef5f2506751fdf31"
-            }
-        ],
-        "cleanup": [
-            "/libexec/*",
-            "/lib/pkgconfig",
-            "/include",
-            "*.a",
-            "*.la"
-        ]
+      "name": "vala",
+      "buildsystem": "autotools",
+      "config-opts": [],
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://download-fallback.gnome.org/sources/vala/0.52/vala-0.52.4.tar.xz",
+          "sha256": "ecde520e5160e659ee699f8b1cdc96065edbd44bbd08eb48ef5f2506751fdf31"
+        }
+      ],
+      "cleanup": [
+        "/libexec",
+        "/lib/pkgconfig",
+        "/include",
+        "*.a",
+        "*.la"
+      ]
     },
     {
       "name": "libgdata",
@@ -207,16 +211,16 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://gitlab.gnome.org/GNOME/libgdata/-/archive/0.17.13/libgdata-0.17.13.tar.bz2",
-          "sha256": "13b2d0d6a2763e56f96dadd6f53e0158129b92d4a46295bfe38b1dedc3b80629"
+          "url": "https://gitlab.gnome.org/GNOME/libgdata/-/archive/0.18.1/libgdata-0.18.1.tar.bz2",
+          "sha256": "ed1e39db87914344cb8f1ab0d0f320aa662848816c466b879f75f46854439545"
         }
       ],
       "cleanup": [
-	      "/libexec/*",
-	      "/lib/pkgconfig",
-	      "/include",
-	      "*.a",
-	      "*.la"
+        "/libexec",
+        "/lib/pkgconfig",
+        "/include",
+        "*.a",
+        "*.la"
       ]
     },
     {
@@ -247,50 +251,6 @@
       ]
     },
     {
-      "name": "pcsc-lite",
-      "config-opts": [
-        "--disable-libudev",
-        "--disable-libsystemd",
-        "--without-systemdsystemunitdir",
-        "--disable-serial",
-        "--disable-usb",
-        "--disable-documentation"
-      ],
-      "post-install": [
-        "rm /app/sbin/pcscd",
-        "rmdir /app/sbin || true"
-      ],
-      "sources": [
-        {
-          "type": "archive",
-          "url": "https://github.com/LudovicRousseau/PCSC/archive/refs/tags/1.9.1.tar.gz",
-          "sha256": "1eaad042a8a8f9d398bf3fc27a35e516e4f0b90437a0e11a46d280ddd9c5848d"
-        }
-      ]
-    },
-    {
-      "name": "pinentry",
-      "config-opts": [
-        "--enable-pinentry-gtk2",
-        "--disable-ncurses",
-        "--disable-fallback-curses",
-        "--disable-pinentry-curses",
-        "--disable-pinentry-emacs",
-        "--disable-pinentry-gnome3",
-        "--disable-pinentry-qt5",
-        "--disable-pinentry-tty",
-        "--disable-pinentry-tqt",
-        "--disable-pinentry-fltk"
-      ],
-      "sources": [
-        {
-          "type": "archive",
-          "url": "https://www.gnupg.org/ftp/gcrypt/pinentry/pinentry-1.1.1.tar.bz2",
-          "sha256": "cd12a064013ed18e2ee8475e669b9f58db1b225a0144debdb85a68cecddba57f"
-        }
-      ]
-    },
-    {
       "name": "claws-mail",
       "buildsystem": "autotools",
       "config-opts": [
@@ -307,9 +267,15 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://claws-mail.org/releases/claws-mail-3.18.0.tar.xz",
-          "sha256": "cb5819e66b4bb3bbd44eb79c58f516a932389367a7900554321c24b509ece6bb"
+          "url": "https://claws-mail.org/releases/claws-mail-4.0.0.tar.xz",
+          "sha256": "4af2bd26a5d91eacb2a9c09f67a6a46c2222b40817c1f525dc050bdc7b0ee475"
         }
+      ],
+      "cleanup": [
+        "/lib/pkgconfig",
+        "/include",
+        "*.a",
+        "*.la"
       ]
     },
     {
@@ -320,8 +286,7 @@
         "install -Dm644 org.claws_mail.Claws-Mail.desktop /app/share/applications/org.claws_mail.Claws-Mail.desktop",
         "install -Dm644 claws-mail-48x48.png /app/share/icons/hicolor/48x48/apps/org.claws_mail.Claws-Mail.png",
         "install -Dm644 claws-mail-64x64.png /app/share/icons/hicolor/64x64/apps/org.claws_mail.Claws-Mail.png",
-        "install -Dm644 claws-mail-128x128.png /app/share/icons/hicolor/128x128/apps/org.claws_mail.Claws-Mail.png",
-        "install -Dm744 claws-mail-wrapper.sh /app/bin/claws-mail-wrapper.sh"
+        "install -Dm644 claws-mail-128x128.png /app/share/icons/hicolor/128x128/apps/org.claws_mail.Claws-Mail.png"
       ],
       "sources": [
         {
@@ -343,10 +308,6 @@
         {
           "type": "file",
           "path": "static/claws-mail-128x128.png"
-        },
-        {
-          "type": "file",
-          "path": "static/claws-mail-wrapper.sh"
         }
       ]
     }
