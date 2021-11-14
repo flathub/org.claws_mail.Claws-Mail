@@ -5,6 +5,7 @@
   "sdk": "org.freedesktop.Sdk",
   "command": "/app/bin/claws-mail",
   "finish-args": [
+    "--device=dri",
     "--share=ipc",
     "--share=network",
     "--socket=x11",
