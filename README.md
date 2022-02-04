@@ -2,10 +2,7 @@
 
 The flathub recipe for building [Claws-Mail](https://claws-mail.org) as a flatpak distributable package.
 
-Debug extension: `org.claws_mail.Claws_Mail.Debug`. (`flatpak install flathub org.claws_mail.Claws_Mail.Debug`)  
-The [flatpak documentation on debugging](https://docs.flatpak.org/en/latest/debugging.html) explains debugging flatpaks in more detail.
-
-GnuPG -- and smartcards and security keys -- are supported. Make sure `gpg-agent` is running on the host system and the socket is available at the default location: `$XDG_RUNTIME_DIR/gnupg`.
+See [packaging.md for flatpak-package details](packaging.md)
 
 ## Functionality
 
