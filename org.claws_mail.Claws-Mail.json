@@ -3,12 +3,14 @@
   "runtime": "org.freedesktop.Platform",
   "runtime-version": "21.08",
   "sdk": "org.freedesktop.Sdk",
-  "command": "/app/bin/claws-mail",
+  "command": "/app/bin/claws-mail.sh",
   "finish-args": [
     "--share=ipc",
     "--share=network",
     "--socket=x11",
     "--socket=wayland",
+    "--socket=pcsc",
+    "--system-talk-name=org.freedesktop.NetworkManager",
     "--talk-name=org.freedesktop.Notifications",
     "--filesystem=home",
     "--filesystem=xdg-run/gnupg:ro"
@@ -17,6 +19,12 @@
     {
       "name": "libetpan",
       "buildsystem": "autotools",
+      "config-opts": [
+        "--with-openssl=/usr/include/openssl",
+        "--with-gnutls=/usr/include/gnutls",
+        "--with-sasl=/usr/include/sasl",
+        "--with-zlib"
+      ],
       "sources": [
         {
           "type": "archive",
@@ -70,7 +78,7 @@
       "name": "libpoppler-glib",
       "buildsystem": "cmake-ninja",
       "config-opts": [
-          "-DENABLE_BOOST=OFF"
+        "-DENABLE_BOOST=OFF"
       ],
       "sources": [
         {
@@ -247,13 +255,172 @@
           ]
         }
       ],
+      "cleanup": []
+    },
+    {
+      "name": "enchant",
+      "buildsystem": "autotools",
+      "config-opts": [],
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://github.com/AbiWord/enchant/releases/download/v2.3.1/enchant-2.3.1.tar.gz",
+          "sha256": "7b4b1afcf2cd8bfa691deea6188404d337f23174bbc39b9c2add2bf340736e9c"
+        }
+      ],
       "cleanup": [
+        "/libexec",
+        "/lib/pkgconfig",
+        "/include",
+        "*.a",
+        "*.la"
+      ]
+    },
+    "shared-modules/intltool/intltool-0.51.json",
+    {
+      "name": "libndp",
+      "buildsystem": "autotools",
+      "sources": [
+        {
+          "type": "archive",
+          "url": " http://libndp.org/files/libndp-1.6.tar.gz",
+          "sha256": "0c7dfa84e013bd5e569ef2c6292a6f72cfaf14f4ff77a77425e52edc33ffac0e"
+        }
+      ],
+      "cleanup": [
+        "/libexec",
+        "/lib/pkgconfig",
+        "/include",
+        "*.a",
+        "*.la"
+      ]
+    },
+    {
+      "name": "NetworkManager",
+      "buildsystem": "meson",
+      "build-options": {
+        "cflags": "-ltinfo",
+        "cxxflags": "-ltinfo"
+      },
+      "config-opts": [
+        "-Dudev_dir=no",
+        "-Ddbus_conf_dir=no",
+        "-Dsystemdsystemunitdir=no",
+        "-Dsession_tracking=systemd",
+        "-Dpolkit=false",
+        "-Dlibaudit=no",
+        "-Ddnsmasq=/usr/bin/true",
+        "-Ddocs=false",
+        "-Dintrospection=false",
+        "-Diptables=/usr/bin/true",
+        "-Dlibpsl=false",
+        "-Dmodem_manager=false",
+        "-Dnmcli=false",
+        "-Dnmtui=false",
+        "-Dovs=false",
+        "-Dppp=false",
+        "-Dqt=false",
+        "-Dselinux=false",
+        "-Dsystemd_journal=false",
+        "-Dtests=no",
+        "-Dvapi=false"
+      ],
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://gitlab.freedesktop.org/NetworkManager/NetworkManager/-/archive/1.32.12/NetworkManager-1.32.12.tar.bz2",
+          "sha256": "f420641d1c2b8fb840962087b0918258c32b584cb9e1354718c15017166df896"
+        }
+      ],
+      "cleanup": [
+        "/libexec",
+        "/lib/pkgconfig",
+        "/lib/cmake",
+        "/include",
+        "*.a",
+        "*.la"
+      ]
+    },
+    "shared-modules/dbus-glib/dbus-glib.json",
+    {
+      "name": "libnotify",
+      "buildsystem": "meson",
+      "config-opts": [
+        "-Dtests=false",
+        "-Dintrospection=disabled",
+        "-Dman=false",
+        "-Dgtk_doc=false",
+        "-Ddocbook_doc=false"
+      ],
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://gitlab.gnome.org/GNOME/libnotify/-/archive/0.7.9/libnotify-0.7.9.tar.bz2",
+          "sha256": "fecaebffd0a47952c3fcaf1d054b534c6a0f3106dd2f6459c0fa1dc23428df86"
+        }
+      ],
+      "cleanup": [
+        "/libexec",
+        "/lib/pkgconfig",
+        "/lib/cmake",
+        "/include",
+        "*.a",
+        "*.la"
+      ]
+    },
+    "shared-modules/libcanberra/libcanberra.json",
+    {
+      "name": "pcsc-lite",
+      "config-opts": [
+        "--disable-libudev",
+        "--disable-libsystemd",
+        "--without-systemdsystemunitdir",
+        "--disable-serial",
+        "--disable-usb",
+        "--disable-documentation"
+      ],
+      "post-install": [
+        "rm /app/sbin/pcscd",
+        "rmdir /app/sbin || true"
+      ],
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://github.com/LudovicRousseau/PCSC/archive/pcsc-1.9.0.tar.gz",
+          "sha256": "9e9b332bf8d37123d0c29e0ac359140b64cfd2bdf7be341a8d39e49fda592df2"
+        }
+      ]
+    },
+    "shared-modules/gtk2/gtk2.json",
+    "shared-modules/libsecret/libsecret.json",
+    {
+      "name": "pinentry",
+      "config-opts": [
+        "--enable-pinentry-gtk2",
+        "--disable-ncurses",
+        "--disable-fallback-curses",
+        "--disable-pinentry-curses",
+        "--disable-pinentry-emacs",
+        "--disable-inside-emacs",
+        "--disable-pinentry-gnome3",
+        "--disable-pinentry-qt5",
+        "--disable-pinentry-tty",
+        "--disable-pinentry-tqt",
+        "--disable-pinentry-fltk"
+      ],
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://www.gnupg.org/ftp/gcrypt/pinentry/pinentry-1.1.1.tar.bz2",
+          "sha256": "cd12a064013ed18e2ee8475e669b9f58db1b225a0144debdb85a68cecddba57f"
+        }
       ]
     },
     {
       "name": "claws-mail",
       "buildsystem": "autotools",
       "config-opts": [
+        "--enable-networkmanager",
         "--enable-tnef_parse-plugin",
         "--enable-pdf_viewer-plugin",
         "--enable-vcalendar-plugin",
@@ -286,7 +453,8 @@
         "install -Dm644 org.claws_mail.Claws-Mail.desktop /app/share/applications/org.claws_mail.Claws-Mail.desktop",
         "install -Dm644 claws-mail-48x48.png /app/share/icons/hicolor/48x48/apps/org.claws_mail.Claws-Mail.png",
         "install -Dm644 claws-mail-64x64.png /app/share/icons/hicolor/64x64/apps/org.claws_mail.Claws-Mail.png",
-        "install -Dm644 claws-mail-128x128.png /app/share/icons/hicolor/128x128/apps/org.claws_mail.Claws-Mail.png"
+        "install -Dm644 claws-mail-128x128.png /app/share/icons/hicolor/128x128/apps/org.claws_mail.Claws-Mail.png",
+        "install -Dm755 claws-mail.sh /app/bin/claws-mail.sh"
       ],
       "sources": [
         {
@@ -308,6 +476,10 @@
         {
           "type": "file",
           "path": "static/claws-mail-128x128.png"
+        },
+        {
+          "type": "file",
+          "path": "static/claws-mail.sh"
         }
       ]
     }
