@@ -417,6 +417,36 @@
       ]
     },
     {
+      "name": "fltk",
+      "buildsystem": "autotools",
+      "config-opts": [],
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://www.fltk.org/pub/fltk/1.3.8/fltk-1.3.8-source.tar.bz2",
+          "sha256": "1d9832409fc08c908c64ab40ad9fd8b0e8af5d203651eb9690b810f41e2f412d"
+        }
+      ]
+    },
+    {
+      "name": "dillo",
+      "buildsystem": "autotools",
+      "config-opts": [
+        "--enable-ipv6",
+        "--enable-cookies",
+        "--enable-png",
+        "--enable-jpeg",
+        "--enable-gif"
+      ],
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://www.dillo.org/download/dillo-3.0.5.tar.bz2",
+          "sha256": "db1be16c1c5842ebe07b419aa7c6ef11a45603a75df2877f99635f4f8345148b"
+        }
+      ]
+    },
+    {
       "name": "claws-mail",
       "buildsystem": "autotools",
       "config-opts": [
