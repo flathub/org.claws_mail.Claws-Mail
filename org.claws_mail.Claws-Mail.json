@@ -371,6 +371,7 @@
     "shared-modules/libcanberra/libcanberra.json",
     {
       "name": "pcsc-lite",
+      "buildsystem": "autotools",
       "config-opts": [
         "--disable-libudev",
         "--disable-libsystemd",
@@ -395,6 +396,7 @@
     "shared-modules/libsecret/libsecret.json",
     {
       "name": "pinentry",
+      "buildsystem": "autotools",
       "config-opts": [
         "--enable-pinentry-gtk2",
         "--disable-ncurses",

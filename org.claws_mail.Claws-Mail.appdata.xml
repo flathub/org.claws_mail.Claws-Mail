@@ -22,7 +22,7 @@
     <p>The appearance and interface are designed to be familiar to new users coming from other popular email clients, as well as experienced users. Almost all commands are accessible with the keyboard.</p>
     <p>The messages are managed in the standard MH format, which features fast access and data security. You'll be able to import your emails from almost any other email client, and export them just as easily.</p>
     <p>Lots of extra functionality, like an RSS aggregator, calendar, or laptop LED handling, are provided by extra plugins.</p>
-    <p><a href="https://github.com/flathub/org.claws_mail.Claws-Mail/blob/master/packaging.md">Flatpak-package notes</a> This is an unofficial package.</p>
+    <p>This is an unofficial package. (See https://github.com/flathub/org.claws_mail.Claws-Mail)</p>
   </description>
 
   <icon type="remote" height="128" width="128">https://github.com/flathub/org.claws_mail.Claws-Mail/raw/master/share/icons/hicolor/128x128/apps/claws-mail.png</icon>
