@@ -19,7 +19,7 @@ GenericName[ru]=Почтовый клиент
 GenericName[sk]=Poštový klient
 GenericName[sv]=E-postklient
 GenericName[tr]=E-posta istemcisi
-Exec=/app/bin/claws-mail %u
+Exec=/app/bin/claws-mail.sh %u
 Icon=org.claws_mail.Claws-Mail
 Categories=Network;Email;
 Keywords=lightweight;fast;gui;extensible;plugin;pop;pop3;imap;imap4;nntp;news;
@@ -50,7 +50,7 @@ X-Info=Claws Mail
 Actions=GetMail;ComposeMail;SendFile;
 
 [Desktop Action GetMail]
-Exec=claws-mail --receive-all
+Exec=/app/bin/claws-mail --receive-all
 Name=Get Mail
 Name[ca]=Rebre
 Name[es]=Recibir
@@ -61,7 +61,7 @@ Name[ru]=Получить Почту
 Name[tr]=Posta Al
 
 [Desktop Action ComposeMail]
-Exec=claws-mail --compose
+Exec=/app/bin/claws-mail --compose
 Name=Email...
 Name[ca]=Correu...
 Name[es]=Correo...
@@ -72,7 +72,7 @@ Name[ru]=Письмо...
 Name[tr]=E-posta yaz...
 
 [Desktop Action SendFile]
-Exec=claws-mail --compose --attach %f
+Exec=/app/bin/claws-mail --compose --attach %f
 Name=Send file...
 Name[ca]=Enviar arxiu...
 Name[es]=Enviar fichero...

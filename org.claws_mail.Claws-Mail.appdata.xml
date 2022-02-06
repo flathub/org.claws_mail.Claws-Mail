@@ -22,6 +22,7 @@
     <p>The appearance and interface are designed to be familiar to new users coming from other popular email clients, as well as experienced users. Almost all commands are accessible with the keyboard.</p>
     <p>The messages are managed in the standard MH format, which features fast access and data security. You'll be able to import your emails from almost any other email client, and export them just as easily.</p>
     <p>Lots of extra functionality, like an RSS aggregator, calendar, or laptop LED handling, are provided by extra plugins.</p>
+    <p><a href="https://github.com/flathub/org.claws_mail.Claws-Mail/blob/master/packaging.md">Flatpak-package notes</a> This is an unofficial package.</p>
   </description>
 
   <icon type="remote" height="128" width="128">https://github.com/flathub/org.claws_mail.Claws-Mail/raw/master/share/icons/hicolor/128x128/apps/claws-mail.png</icon>
@@ -33,22 +34,45 @@
   <screenshots>
     <screenshot>
       <image type="source">
-          https://raw.githubusercontent.com/flathub/org.claws_mail.Claws-Mail/82e33d8f11ce35ec755840d31bb727c068b4d33b/screenshots/screenshot-main.png
+        https://raw.githubusercontent.com/flathub/org.claws_mail.Claws-Mail/42596b5cfc8dadee8c88ec65dc3675cf1677e81e/screenshots/claws-mail-main-window.png
       </image>
     </screenshot>
     <screenshot>
       <image type="source">
-          https://raw.githubusercontent.com/flathub/org.claws_mail.Claws-Mail/82e33d8f11ce35ec755840d31bb727c068b4d33b/screenshots/screenshot-compose.png
+        https://raw.githubusercontent.com/flathub/org.claws_mail.Claws-Mail/42596b5cfc8dadee8c88ec65dc3675cf1677e81e/screenshots/claws-mail-compose-window.png
       </image>
     </screenshot>
     <screenshot>
       <image type="source">
-          https://raw.githubusercontent.com/flathub/org.claws_mail.Claws-Mail/82e33d8f11ce35ec755840d31bb727c068b4d33b/screenshots/screenshot-read.png
+        https://raw.githubusercontent.com/flathub/org.claws_mail.Claws-Mail/42596b5cfc8dadee8c88ec65dc3675cf1677e81e/screenshots/claws-mail-reading-mail.png
+      </image>
+    </screenshot>
+    <screenshot>
+      <image type="source">
+        https://raw.githubusercontent.com/flathub/org.claws_mail.Claws-Mail/42596b5cfc8dadee8c88ec65dc3675cf1677e81e/screenshots/claws-mail-current-features.png
+      </image>
+    </screenshot>
+    <screenshot>
+      <image type="source">
+        https://raw.githubusercontent.com/flathub/org.claws_mail.Claws-Mail/42596b5cfc8dadee8c88ec65dc3675cf1677e81e/screenshots/claws-mail-current-plugins.png
       </image>
     </screenshot>
   </screenshots>
 
   <releases>
+    <release version="4.0.0-1" date="2021-11-20">
+        <p>Claws-Mail 4.0.0</p>
+        <ul>
+            <li>First release using GTK-3 toolkit.</li>
+        </ul>
+        <p>Flatpak-package notes:</p>
+        <ul>
+            <li>The gpg-agent will no longer be started inside the flatpak package if it is not running. Please make sure that gpg-agent is running on the host system if you rely on access to gpg keys/smartcards/security keys.</li>
+            <li>Network Manager support added. Connection changes are now detected by Claws-Mail and will react appropriately.</li>
+            <li>Spell-checking support enabled.</li>
+            <li>Extended notifications support enabled.</li>
+        </ul>
+    </release>
     <release version="4.0.0" date="2021-11-12">
         <p>Claws-Mail updated to 4.0.0</p>
         <ul>

@@ -2,18 +2,28 @@
 # flatpak packaging instructions.
 #
 # SPDX-License-Identifier: MIT
-.PHONY: install uninstall build-shell run run-shell validate clean distclean
+#
+# To use:
+# - modify `$(APPID)` and `$(RUNCMD)` in Makefile to reflect flatpak application.
+# - requires `$(APPID).json` and `$(APPID).appdata.xml` to exist.
+# - `static/` directory for static files. Makefile assumes it exists.
+# - `flathub.json` file with build instructions for flathub.
+#
+# Directories `build`, `repo`, `.flatpak-builder` may be created as part of the process.
+
+.PHONY: install uninstall build build-shell run run-shell validate distclean clean
 
 APPID = org.claws_mail.Claws-Mail
-RUNCMD = /app/bin/claws-mail
+RUNCMD = /app/bin/claws-mail.sh
 
 # Prescribed variables: changing these is not necessary.
 APPDATA = $(APPID).appdata.xml
 BUNDLE = $(APPID).bundle
 MANIFEST = $(APPID).json
+BUILDCMD = flatpak-builder --sandbox
 
 build: $(MANIFEST) $(APPDATA) flathub.json static/*
-	flatpak-builder --sandbox --force-clean build $(MANIFEST)
+	$(BUILDCMD) --force-clean build $(MANIFEST)
 	touch build
 
 build-shell:
@@ -21,35 +31,54 @@ ifeq ($(MODULE),)
 	@echo "MODULE=modulename is missing."
 	@exit 1
 endif
-	flatpak-builder --sandbox --build-shell=$(MODULE) build $(MANIFEST)
+	$(BUILDCMD) --force-clean --stop-at=$(MODULE) build $(MANIFEST)
+	#-----------------------------------------------------------------------------
+	# All packages prior to build module have been built. Now press enter to
+	# enter the build-shell.
+	#-----------------------------------------------------------------------------
+	@read -p 'Press any key to continue into build-shell or CTRL+C to abort.' _tempvar
+	$(BUILDCMD) --build-shell=$(MODULE) build $(MANIFEST)
 
+# Run the flatpak application from the build directory.
+# (There may on occasion be subtle difference with running from installed
+# flatpak package.)
 run: build
 	flatpak-builder --run build $(MANIFEST) $(RUNCMD)
 
+# Start a shell within the flatpak package.
 run-shell: build
 	flatpak-builder --run build $(MANIFEST) /bin/sh
 
+# Install application directly from build-directory.
 install: build
-	flatpak-builder --sandbox --export-only --user --install build -y $(MANIFEST)
+	$(BUILDCMD) --export-only --user --default-branch=local-build --install build -y $(MANIFEST)
+	@echo
+	@echo "Run with: flatpak run $(APPID)//local-build"
 
+# Construct repository for application.
 repo: build
-	flatpak-builder --sandbox --export-only --repo repo build $(MANIFEST)
+	$(BUILDCMD) --export-only --repo repo build $(MANIFEST)
 	touch repo
 
 $(BUNDLE): repo
 	flatpak build-bundle repo $(BUNDLE) $(APPID)
 
 uninstall:
-	flatpak uninstall -y --user $(APPID)
+	flatpak uninstall -y --user $(APPID)//local-build
 
+# Validate appdata-file to appstream validation rules.
+# TODO: is there an lighter way than 'flatpak info' to test for installed flatpak package?
 validate:
-	which appstream-util && appstream-util validate $(APPDATA) || (\
-	    flatpak info org.freedesktop.appstream-glib > /dev/null || flatpak install -y --system flathub org.freedesktop.appstream-glib;\
-	    flatpak run org.freedesktop.appstream-glib validate $(APPDATA))
+	@(type appstream-util 1>/dev/null 2>&1 && (appstream-util validate $(APPDATA) || true)) || \
+		(flatpak info org.freedesktop.appstream-glib 1>/dev/null 2>&1 && (flatpak run org.freedesktop.appstream-glib validate $(APPDATA) || true)) || \
+		echo "'appstream-util' cannot be found. This is needed for \"appdata\" metadata validation."
 
 distclean: clean
 	rm -rf .flatpak-builder
 
+# Clean up build-directory and log, repository, bundle, and flatpak build-cache
+# of current and previous builds, but preserve archive downloads and git
+# repositories.
 clean:
 	rm -rf build build.log repo $(BUNDLE) .flatpak-builder/build .flatpak-builder/cache .flatpak-builder/ccache .flatpak-builder/checksums .flatpak-builder/rofiles
 
