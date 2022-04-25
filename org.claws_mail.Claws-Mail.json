@@ -242,7 +242,7 @@
         {
           "type": "git",
           "url": "https://git.code.sf.net/p/bogofilter/git",
-          "branch": "75ef6fc25d7055321e3e7c3719732eb2fbcb9c6a"
+          "commit": "75ef6fc25d7055321e3e7c3719732eb2fbcb9c6a"
         },
         {
           "type": "script",
