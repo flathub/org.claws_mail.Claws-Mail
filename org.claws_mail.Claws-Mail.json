@@ -83,8 +83,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://gitlab.freedesktop.org/poppler/poppler/-/archive/poppler-21.09.0/poppler-poppler-21.09.0.tar.bz2",
-          "sha256": "6de996a2d3ea967afedf784f7d072047f30b53ddd951cdf6d4d1f2bc5bd6301a"
+	  "url": "https://gitlab.freedesktop.org/poppler/poppler/-/archive/poppler-22.11.0/poppler-poppler-22.11.0.tar.bz2",
+          "sha256": "b8f618d5c62030034d5c8da4d3f6a740260b7620b9a31021679ce1914d327f81"
         }
       ],
       "cleanup": [
@@ -100,8 +100,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://github.com/libical/libical/releases/download/v3.0.10/libical-3.0.10.tar.gz",
-          "sha256": "f933b3e6cf9d56a35bb5625e8e4a9c3a50239a85aea05ed842932c1a1dc336b4"
+	  "url": "https://github.com/libical/libical/releases/download/v3.0.16/libical-3.0.16.tar.gz",
+          "sha256": "b44705dd71ca4538c86fb16248483ab4b48978524fb1da5097bd76aa2e0f0c33"
         }
       ],
       "cleanup": [
@@ -136,8 +136,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://github.com/x42/liboauth/archive/186fb14843c1bc98b70ece02c74b5696b3de9ce7.zip",
-          "sha256": "5d7a197cf56a7964efc37814b0121806972898e0cdf4fddab6e74249acf6fc83"
+          "url": "https://github.com/x42/liboauth/archive/c26f038eb9a4d97782e3f9f1e3da2b9356581869.zip",
+          "sha256": "ea0a98f256696842ba5fd600ad30088933c8d0939c4c4800f1a44a4b6941e4c4"
         },
         {
           "type": "script",
@@ -177,8 +177,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://gitlab.com/graphviz/graphviz/-/archive/2.48.0/graphviz-2.48.0.tar.bz2",
-          "sha256": "6ba7b075c3820e7a40fbc8879ad25621f65a6f5fec79e41c7987650ac3f727ae"
+          "url": "https://gitlab.com/graphviz/graphviz/-/archive/2.50.0/graphviz-2.50.0.tar.bz2",
+          "sha256": "262b4285530f5804f656e643bfccf0e910fcfc483639921209e16fd7a04bebe0"
         }
       ],
       "cleanup": [
@@ -196,8 +196,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://download-fallback.gnome.org/sources/vala/0.52/vala-0.52.4.tar.xz",
-          "sha256": "ecde520e5160e659ee699f8b1cdc96065edbd44bbd08eb48ef5f2506751fdf31"
+          "url": "https://download-fallback.gnome.org/sources/vala/0.56/vala-0.56.3.tar.xz",
+          "sha256": "e1066221bf7b89cb1fa7327a3888645cb33b604de3bf45aa81132fd040b699bf"
         }
       ],
       "cleanup": [
@@ -242,7 +242,7 @@
         {
           "type": "git",
           "url": "https://git.code.sf.net/p/bogofilter/git",
-          "commit": "75ef6fc25d7055321e3e7c3719732eb2fbcb9c6a"
+          "commit": "db7ac4e79f6d80f924edf5d3bd1179bf68388d27"
         },
         {
           "type": "script",
@@ -264,8 +264,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://github.com/AbiWord/enchant/releases/download/v2.3.1/enchant-2.3.1.tar.gz",
-          "sha256": "7b4b1afcf2cd8bfa691deea6188404d337f23174bbc39b9c2add2bf340736e9c"
+          "url": "https://github.com/AbiWord/enchant/releases/download/v2.3.3/enchant-2.3.3.tar.gz",
+          "sha256": "3da12103f11cf49c3cf2fd2ce3017575c5321a489e5b9bfa81dd91ec413f3891"
         }
       ],
       "cleanup": [
@@ -283,8 +283,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": " http://libndp.org/files/libndp-1.6.tar.gz",
-          "sha256": "0c7dfa84e013bd5e569ef2c6292a6f72cfaf14f4ff77a77425e52edc33ffac0e"
+          "url": " http://libndp.org/files/libndp-1.8.tar.gz",
+          "sha256": "88ffb66ee2eb527f146f5c02f5ccbc38ba97d2b0d57eb46bfba488821ab0c02b"
         }
       ],
       "cleanup": [
@@ -328,8 +328,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://gitlab.freedesktop.org/NetworkManager/NetworkManager/-/archive/1.32.12/NetworkManager-1.32.12.tar.bz2",
-          "sha256": "f420641d1c2b8fb840962087b0918258c32b584cb9e1354718c15017166df896"
+          "url": "https://gitlab.freedesktop.org/NetworkManager/NetworkManager/-/archive/1.38.6/NetworkManager-1.38.6.tar.bz2",
+          "sha256": "af20f65827c4fdb9000c992ac715cff28a7a5a7d344353947d96a98262a492fd"
         }
       ],
       "cleanup": [
@@ -355,8 +355,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://gitlab.gnome.org/GNOME/libnotify/-/archive/0.7.9/libnotify-0.7.9.tar.bz2",
-          "sha256": "fecaebffd0a47952c3fcaf1d054b534c6a0f3106dd2f6459c0fa1dc23428df86"
+          "url": "https://gitlab.gnome.org/GNOME/libnotify/-/archive/0.8.1/libnotify-0.8.1.tar.bz2",
+          "sha256": "6a17cd1eacc17c2dd2620e68da2b25151f08489ca17210ae32ae4b8c16e46889"
         }
       ],
       "cleanup": [
@@ -387,8 +387,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://github.com/LudovicRousseau/PCSC/archive/pcsc-1.9.0.tar.gz",
-          "sha256": "9e9b332bf8d37123d0c29e0ac359140b64cfd2bdf7be341a8d39e49fda592df2"
+          "url": "https://github.com/LudovicRousseau/PCSC/archive/refs/tags/1.9.9.tar.gz",
+          "sha256": "856a1daed9a5ae1ac265c75ce9f81743e66a972e5be5a1d3a2196ed23f75ea26"
         }
       ]
     },
@@ -413,8 +413,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://www.gnupg.org/ftp/gcrypt/pinentry/pinentry-1.1.1.tar.bz2",
-          "sha256": "cd12a064013ed18e2ee8475e669b9f58db1b225a0144debdb85a68cecddba57f"
+	  "url": "https://gnupg.org/ftp/gcrypt/pinentry/pinentry-1.2.1.tar.bz2",
+          "sha256": "457a185e5a85238fb945a955dc6352ab962dc8b48720b62fc9fa48c7540a4067"
         }
       ]
     },
