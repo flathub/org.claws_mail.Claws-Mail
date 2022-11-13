@@ -83,7 +83,7 @@
       "sources": [
         {
           "type": "archive",
-	  "url": "https://gitlab.freedesktop.org/poppler/poppler/-/archive/poppler-22.11.0/poppler-poppler-22.11.0.tar.bz2",
+          "url": "https://gitlab.freedesktop.org/poppler/poppler/-/archive/poppler-22.11.0/poppler-poppler-22.11.0.tar.bz2",
           "sha256": "b8f618d5c62030034d5c8da4d3f6a740260b7620b9a31021679ce1914d327f81"
         }
       ],
@@ -100,7 +100,7 @@
       "sources": [
         {
           "type": "archive",
-	  "url": "https://github.com/libical/libical/releases/download/v3.0.16/libical-3.0.16.tar.gz",
+          "url": "https://github.com/libical/libical/releases/download/v3.0.16/libical-3.0.16.tar.gz",
           "sha256": "b44705dd71ca4538c86fb16248483ab4b48978524fb1da5097bd76aa2e0f0c33"
         }
       ],
@@ -156,6 +156,13 @@
     {
       "name": "libsoup",
       "buildsystem": "meson",
+      "config-opts": [
+        "-Dintrospection=enabled",
+        "-Dgnome=false",
+        "-Dgtk_doc=false",
+        "-Dtests=false",
+        "-Dinstalled_tests=false"
+      ],
       "sources": [
         {
           "type": "archive",
@@ -423,7 +430,7 @@
       "sources": [
         {
           "type": "archive",
-	  "url": "https://gnupg.org/ftp/gcrypt/pinentry/pinentry-1.2.1.tar.bz2",
+          "url": "https://gnupg.org/ftp/gcrypt/pinentry/pinentry-1.2.1.tar.bz2",
           "sha256": "457a185e5a85238fb945a955dc6352ab962dc8b48720b62fc9fa48c7540a4067"
         }
       ]
@@ -446,7 +453,7 @@
       "sources": [
         {
           "type": "archive",
-	  "url": "https://claws-mail.org/releases/claws-mail-4.1.1.tar.xz",
+          "url": "https://claws-mail.org/releases/claws-mail-4.1.1.tar.xz",
           "sha256": "b189e700c1896f5e0deb0b76d4bfa820eb7ac1935ee10aa9afbada3cf53a0344"
         }
       ],
