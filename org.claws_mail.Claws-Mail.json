@@ -1,7 +1,7 @@
 {
   "app-id": "org.claws_mail.Claws-Mail",
   "runtime": "org.freedesktop.Platform",
-  "runtime-version": "21.08",
+  "runtime-version": "22.08",
   "sdk": "org.freedesktop.Sdk",
   "command": "/app/bin/claws-mail.sh",
   "finish-args": [
@@ -151,6 +151,17 @@
         "/include",
         "*.a",
         "*.la"
+      ]
+    },
+    {
+      "name": "libsoup",
+      "buildsystem": "meson",
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://gitlab.gnome.org/GNOME/libsoup/-/archive/2.74.3/libsoup-2.74.3.tar.bz2",
+          "sha256": "eccb481b8e3586f917fa00251c23a3c25019f18bfe1b5e35bce9de257733545b"
+        }
       ]
     },
     {
@@ -349,8 +360,7 @@
         "-Dtests=false",
         "-Dintrospection=disabled",
         "-Dman=false",
-        "-Dgtk_doc=false",
-        "-Ddocbook_doc=false"
+        "-Dgtk_doc=false"
       ],
       "sources": [
         {
