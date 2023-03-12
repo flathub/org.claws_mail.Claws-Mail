@@ -6,7 +6,7 @@ pkgs.mkShell {
     pkgs.htop
     pkgs.zlib
     pkgs.less
-    pkgs.gitMinimal
+    #pkgs.gitMinimal
 
     pkgs.gnumake
     pkgs.autoconf
