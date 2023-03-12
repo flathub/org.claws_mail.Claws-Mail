@@ -6,6 +6,7 @@ pkgs.mkShell {
     pkgs.htop
     pkgs.zlib
     pkgs.less
+    #pkgs.iproute2
     #pkgs.gitMinimal
 
     pkgs.gnumake

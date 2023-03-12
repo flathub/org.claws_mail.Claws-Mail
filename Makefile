@@ -43,6 +43,7 @@ endif
 	@read -p 'Press any key to continue into build-shell or CTRL+C to abort.' _tempvar
 	$(BUILDCMD) --build-shell=$(MODULE) build $(MANIFEST)
 
+# Target `download` was defined for nix-shell to avoid needing internet access for every build. I'm not sure if this is still as useful.
 download:
 	$(BUILDCMD) --force-clean --download-only build $(MANIFEST)
 
