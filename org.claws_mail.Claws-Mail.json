@@ -258,9 +258,9 @@
       ],
       "sources": [
         {
-          "type": "git",
-          "url": "https://git.code.sf.net/p/bogofilter/git",
-          "commit": "db7ac4e79f6d80f924edf5d3bd1179bf68388d27"
+          "type": "archive",
+          "url": "https://sourceforge.net/code-snapshots/git/b/bo/bogofilter/git.git/bogofilter-git-db7ac4e79f6d80f924edf5d3bd1179bf68388d27.zip",
+          "sha256": "c68ab4dd219e98526f06253999847789ddc189976edc0e9883f5de6b11d534f0"
         },
         {
           "type": "script",
