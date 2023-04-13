@@ -11,7 +11,7 @@
 #
 # Directories `build`, `repo`, `.flatpak-builder` may be created as part of the process.
 
-.PHONY: install uninstall build build-shell run run-shell validate distclean clean
+.PHONY: download install uninstall build build-shell run run-shell validate distclean clean
 
 APPID = org.claws_mail.Claws-Mail
 RUNCMD = /app/bin/claws-mail.sh
@@ -21,9 +21,13 @@ APPDATA = $(APPID).appdata.xml
 BUNDLE = $(APPID).bundle
 MANIFEST = $(APPID).json
 BUILDCMD = flatpak-builder --sandbox
+ifdef IN_NIX_SHELL
+	# don't bother fiddling around with fuse if we are already in a separate environment
+	BUILDCMD += --disable-rofiles-fuse
+endif
 
 build: $(MANIFEST) $(APPDATA) flathub.json static/*
-	$(BUILDCMD) --force-clean build $(MANIFEST)
+	$(BUILDCMD) --force-clean --disable-updates build $(MANIFEST)
 	touch build
 
 build-shell:
@@ -38,6 +42,10 @@ endif
 	#-----------------------------------------------------------------------------
 	@read -p 'Press any key to continue into build-shell or CTRL+C to abort.' _tempvar
 	$(BUILDCMD) --build-shell=$(MODULE) build $(MANIFEST)
+
+# Target `download` was defined for nix-shell to avoid needing internet access for every build. I'm not sure if this is still as useful.
+download:
+	$(BUILDCMD) --force-clean --download-only build $(MANIFEST)
 
 # Run the flatpak application from the build directory.
 # (There may on occasion be subtle difference with running from installed
