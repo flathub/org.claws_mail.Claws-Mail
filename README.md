@@ -84,7 +84,6 @@ Reminders for later consideration.
   - PARTS: running `gpg-agent` in container is only a solution if `gpg-agent` is not yet running on host.
   - PARTS: `--socket=pcsc` is only a solution until `scdaemon` is running on the host.
   - PARTS: keeping `--socket=pcsc` for "back-up purposes" could mean that `gpg-agent` runs on the host while `scdaemon` runs in the container, from different binary packages/compiler options/dependencies. This is not a problem in itself, but it would be nicer to use everything from the host and just hook into the existing unix sockets (named pipes?).
-- FIXME: need to update URLs of screenshots when merging into master.
 - TODO: add accessibility bus. (something like `org.a11y.*`)
 - TODO: optional dependencies:
   - libwebkit for fancy plugin
