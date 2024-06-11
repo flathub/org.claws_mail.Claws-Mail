@@ -1,7 +1,7 @@
 {
   "app-id": "org.claws_mail.Claws-Mail",
   "runtime": "org.freedesktop.Platform",
-  "runtime-version": "22.08",
+  "runtime-version": "23.08",
   "sdk": "org.freedesktop.Sdk",
   "command": "claws-mail.sh",
   "finish-args": [
@@ -119,66 +119,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://github.com/google/gumbo-parser/archive/v0.10.1.tar.gz",
-          "sha256": "28463053d44a5dfbc4b77bcf49c8cee119338ffa636cc17fc3378421d714efad"
-        }
-      ],
-      "cleanup": [
-        "/lib/pkgconfig",
-        "/include",
-        "*.a",
-        "*.la"
-      ]
-    },
-    {
-      "name": "liboauth",
-      "buildsystem": "autotools",
-      "sources": [
-        {
-          "type": "archive",
-          "url": "https://github.com/x42/liboauth/archive/c26f038eb9a4d97782e3f9f1e3da2b9356581869.zip",
-          "sha256": "ea0a98f256696842ba5fd600ad30088933c8d0939c4c4800f1a44a4b6941e4c4"
-        },
-        {
-          "type": "script",
-          "commands": [
-            "autoreconf -fi"
-          ]
-        }
-      ],
-      "cleanup": [
-        "/lib/pkgconfig",
-        "/include",
-        "*.a",
-        "*.la"
-      ]
-    },
-    {
-      "name": "libsoup",
-      "buildsystem": "meson",
-      "config-opts": [
-        "-Dintrospection=enabled",
-        "-Dgnome=false",
-        "-Dgtk_doc=false",
-        "-Dtests=false",
-        "-Dinstalled_tests=false"
-      ],
-      "sources": [
-        {
-          "type": "archive",
-          "url": "https://gitlab.gnome.org/GNOME/libsoup/-/archive/2.74.3/libsoup-2.74.3.tar.bz2",
-          "sha256": "eccb481b8e3586f917fa00251c23a3c25019f18bfe1b5e35bce9de257733545b"
-        }
-      ]
-    },
-    {
-      "name": "libuhttpmock",
-      "buildsystem": "autotools",
-      "sources": [
-        {
-          "type": "archive",
-          "url": "https://gitlab.com/uhttpmock/uhttpmock/-/archive/0.5.3/uhttpmock-0.5.3.tar.gz",
-          "sha256": "17902a5bca494ec1fa2cbade1fde1be5387e4024fef63b3fc8dd555294233b13"
+          "url": "https://codeberg.org/gumbo-parser/gumbo-parser/archive/0.12.1.tar.gz",
+          "sha256": "c0bb5354e46539680724d638dbea07296b797229a7e965b13305c930ddc10d82"
         }
       ],
       "cleanup": [
@@ -216,29 +158,6 @@
           "type": "archive",
           "url": "https://download.gnome.org/sources/vala/0.56/vala-0.56.3.tar.xz",
           "sha256": "e1066221bf7b89cb1fa7327a3888645cb33b604de3bf45aa81132fd040b699bf"
-        }
-      ],
-      "cleanup": [
-        "/libexec",
-        "/lib/pkgconfig",
-        "/include",
-        "*.a",
-        "*.la"
-      ]
-    },
-    {
-      "name": "libgdata",
-      "buildsystem": "meson",
-      "config-opts": [
-        "-Dgoa=disabled",
-        "-Dgnome=disabled",
-        "-Dgtk_doc=false"
-      ],
-      "sources": [
-        {
-          "type": "archive",
-          "url": "https://gitlab.gnome.org/GNOME/libgdata/-/archive/0.18.1/libgdata-0.18.1.tar.bz2",
-          "sha256": "ed1e39db87914344cb8f1ab0d0f320aa662848816c466b879f75f46854439545"
         }
       ],
       "cleanup": [
@@ -444,7 +363,6 @@
         "--enable-pdf_viewer-plugin",
         "--enable-vcalendar-plugin",
         "--enable-litehtml_viewer-plugin",
-        "--enable-gdata-plugin",
         "--enable-bogofilter-plugin",
         "--disable-perl-plugin",
         "--disable-dillo-plugin",
