@@ -453,8 +453,12 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://claws-mail.org/releases/claws-mail-4.1.1.tar.xz",
-          "sha256": "b189e700c1896f5e0deb0b76d4bfa820eb7ac1935ee10aa9afbada3cf53a0344"
+          "url": "https://www.claws-mail.org//releases/claws-mail-4.2.0.tar.xz",
+          "sha256": "7c8ab1732d74197df06d61a6b7ebc7c580ecf6e92eb1ef6ae5b0107533f1af07"
+        },
+        {
+          "type": "patch",
+          "path": "patches/plugin-chooser.patch"
         }
       ],
       "cleanup": [
