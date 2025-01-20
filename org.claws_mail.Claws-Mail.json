@@ -281,9 +281,9 @@
       "config-opts": [],
       "sources": [
         {
-          "type": "archive",
-          "url": "https://github.com/AbiWord/enchant/archive/refs/tags/v2.3.3.tar.gz",
-          "sha256": "5952a792570eb232af464331b537381aca8bc711a1d8c4251e1f035e9cca8cfb"
+          "type": "git",
+          "url": "https://github.com/AbiWord/enchant.git",
+          "commit": "823df01a92a3dad9172f0ae1a0bcfe9d7039645b"
         }
       ],
       "cleanup": [
