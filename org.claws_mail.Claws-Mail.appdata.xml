@@ -5,7 +5,9 @@
   <name>Claws-Mail</name>
   <project_license>GPL-3.0-only</project_license>
   <metadata_license>CC0-1.0</metadata_license>
-  <developer_name>The Claws Mail Team</developer_name>
+  <developer id="org.claws-mail">
+    <name>The Claws Mail Team</name>
+  </developer>
   <summary>Claws Mail is an email client (and news reader), based on GTK+</summary>
   <url type="homepage">https://claws-mail.org/</url>
 
@@ -25,42 +27,48 @@
     <p>This is an unofficial package. (See package metadata for details.)</p>
   </description>
 
-  <icon type="remote" height="128" width="128">https://github.com/flathub/org.claws_mail.Claws-Mail/raw/master/share/icons/hicolor/128x128/apps/claws-mail.png</icon>
-  <icon type="remote" height="64" width="64">https://github.com/flathub/org.claws_mail.Claws-Mail/raw/master/share/icons/hicolor/64x64/apps/claws-mail.png</icon>
-  <icon type="remote" height="48" width="48">https://github.com/flathub/org.claws_mail.Claws-Mail/raw/master/share/icons/hicolor/48x48/apps/claws-mail.png</icon>
+  <icon type="remote" height="128" width="128">https://github.com/flathub/org.claws_mail.Claws-Mail/raw/master/static/claws-mail-128x128.png</icon>
+  <icon type="remote" height="64" width="64">https://github.com/flathub/org.claws_mail.Claws-Mail/raw/master/static/claws-mail-64x64.png</icon>
+  <icon type="remote" height="48" width="48">https://github.com/flathub/org.claws_mail.Claws-Mail/raw/master/static/claws-mail-48x48.png</icon>
   
   <launchable type="desktop-id">org.claws_mail.Claws-Mail.desktop</launchable>
 
   <screenshots>
-    <screenshot>
+    <screenshot type="default">
       <image type="source">
         https://raw.githubusercontent.com/flathub/org.claws_mail.Claws-Mail/379b411ceda0d0fb6f612c94eed008724df674eb/screenshots/claws-mail-main-window.png
       </image>
+      <caption>The main window</caption>
     </screenshot>
     <screenshot>
       <image type="source">
         https://raw.githubusercontent.com/flathub/org.claws_mail.Claws-Mail/379b411ceda0d0fb6f612c94eed008724df674eb/screenshots/claws-mail-compose-window.png
       </image>
+      <caption>The compose window</caption>
     </screenshot>
     <screenshot>
       <image type="source">
         https://raw.githubusercontent.com/flathub/org.claws_mail.Claws-Mail/379b411ceda0d0fb6f612c94eed008724df674eb/screenshots/claws-mail-reading-mail.png
       </image>
+      <caption>The separate message view</caption>
     </screenshot>
     <screenshot>
       <image type="source">
         https://raw.githubusercontent.com/flathub/org.claws_mail.Claws-Mail/379b411ceda0d0fb6f612c94eed008724df674eb/screenshots/claws-mail-current-features.png
       </image>
+      <caption>The currenlty supported features</caption>
     </screenshot>
     <screenshot>
       <image type="source">
         https://raw.githubusercontent.com/flathub/org.claws_mail.Claws-Mail/379b411ceda0d0fb6f612c94eed008724df674eb/screenshots/claws-mail-current-plugins.png
       </image>
+      <caption>The currenlty enabled plugins</caption>
     </screenshot>
   </screenshots>
 
   <releases>
     <release version="4.1.0" date="2022-04-03">
+      <description>
       <p>Claws-Mail updated to 4.1.0.</p>
       <ul>
         <li>>Text zooming in the Message View is now possible, using CTRL+mouse wheel up/down, CRTL+touchpad two-fingered vertical swiping, or the Message View's right-click menu.</li>
@@ -119,8 +127,10 @@
         <li>weird logic with the 'Edit filter action' dialog</li>
         <li>resource leaks; memory corruption</li>
       </ul>
+      </description>
     </release>
     <release version="4.0.0-1" date="2021-11-20">
+      <description>
         <p>Claws-Mail 4.0.0</p>
         <ul>
             <li>First release using GTK-3 toolkit.</li>
@@ -132,13 +142,16 @@
             <li>Spell-checking support enabled.</li>
             <li>Extended notifications support enabled.</li>
         </ul>
+      </description>
     </release>
     <release version="4.0.0" date="2021-11-12">
+      <description>
         <p>Claws-Mail updated to 4.0.0</p>
         <ul>
             <li>First release using GTK-3 toolkit.</li>
         </ul>
-        <p><i>Flatpak packaging note</i>: the gpg-agent will no longer be started inside the flatpak package if it is not running. Please make sure that gpg-agent is running on the host system if you rely on access to smartcards/security keys.</p>
+        <p><em>Flatpak packaging note</em>: the gpg-agent will no longer be started inside the flatpak package if it is not running. Please make sure that gpg-agent is running on the host system if you rely on access to smartcards/security keys.</p>
+      </description>
     </release>
     <release version="3.18.0-1" date="2021-07-10">
       <description>
