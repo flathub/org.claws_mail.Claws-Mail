@@ -3,7 +3,7 @@
   "runtime": "org.freedesktop.Platform",
   "runtime-version": "22.08",
   "sdk": "org.freedesktop.Sdk",
-  "command": "/app/bin/claws-mail.sh",
+  "command": "claws-mail.sh",
   "finish-args": [
     "--share=ipc",
     "--share=network",
@@ -214,7 +214,7 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://download-fallback.gnome.org/sources/vala/0.56/vala-0.56.3.tar.xz",
+          "url": "https://download.gnome.org/sources/vala/0.56/vala-0.56.3.tar.xz",
           "sha256": "e1066221bf7b89cb1fa7327a3888645cb33b604de3bf45aa81132fd040b699bf"
         }
       ],
@@ -281,9 +281,9 @@
       "config-opts": [],
       "sources": [
         {
-          "type": "archive",
-          "url": "https://github.com/AbiWord/enchant/releases/download/v2.3.3/enchant-2.3.3.tar.gz",
-          "sha256": "3da12103f11cf49c3cf2fd2ce3017575c5321a489e5b9bfa81dd91ec413f3891"
+          "type": "git",
+          "url": "https://github.com/AbiWord/enchant.git",
+          "commit": "823df01a92a3dad9172f0ae1a0bcfe9d7039645b"
         }
       ],
       "cleanup": [
@@ -301,7 +301,7 @@
       "sources": [
         {
           "type": "archive",
-          "url": " http://libndp.org/files/libndp-1.8.tar.gz",
+          "url": "http://libndp.org/files/libndp-1.8.tar.gz",
           "sha256": "88ffb66ee2eb527f146f5c02f5ccbc38ba97d2b0d57eb46bfba488821ab0c02b"
         }
       ],
@@ -453,8 +453,12 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://claws-mail.org/releases/claws-mail-4.1.1.tar.xz",
-          "sha256": "b189e700c1896f5e0deb0b76d4bfa820eb7ac1935ee10aa9afbada3cf53a0344"
+          "url": "https://www.claws-mail.org//releases/claws-mail-4.2.0.tar.xz",
+          "sha256": "7c8ab1732d74197df06d61a6b7ebc7c580ecf6e92eb1ef6ae5b0107533f1af07"
+        },
+        {
+          "type": "patch",
+          "path": "patches/plugin-chooser.patch"
         }
       ],
       "cleanup": [

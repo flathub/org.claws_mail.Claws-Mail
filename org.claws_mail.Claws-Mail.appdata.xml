@@ -5,7 +5,9 @@
   <name>Claws-Mail</name>
   <project_license>GPL-3.0-only</project_license>
   <metadata_license>CC0-1.0</metadata_license>
-  <developer_name>The Claws Mail Team</developer_name>
+  <developer id="org.claws-mail">
+    <name>The Claws Mail Team</name>
+  </developer>
   <summary>Claws Mail is an email client (and news reader), based on GTK+</summary>
   <url type="homepage">https://claws-mail.org/</url>
 
@@ -25,42 +27,97 @@
     <p>This is an unofficial package. (See package metadata for details.)</p>
   </description>
 
-  <icon type="remote" height="128" width="128">https://github.com/flathub/org.claws_mail.Claws-Mail/raw/master/share/icons/hicolor/128x128/apps/claws-mail.png</icon>
-  <icon type="remote" height="64" width="64">https://github.com/flathub/org.claws_mail.Claws-Mail/raw/master/share/icons/hicolor/64x64/apps/claws-mail.png</icon>
-  <icon type="remote" height="48" width="48">https://github.com/flathub/org.claws_mail.Claws-Mail/raw/master/share/icons/hicolor/48x48/apps/claws-mail.png</icon>
+  <icon type="remote" height="128" width="128">https://github.com/flathub/org.claws_mail.Claws-Mail/raw/master/static/claws-mail-128x128.png</icon>
+  <icon type="remote" height="64" width="64">https://github.com/flathub/org.claws_mail.Claws-Mail/raw/master/static/claws-mail-64x64.png</icon>
+  <icon type="remote" height="48" width="48">https://github.com/flathub/org.claws_mail.Claws-Mail/raw/master/static/claws-mail-48x48.png</icon>
   
   <launchable type="desktop-id">org.claws_mail.Claws-Mail.desktop</launchable>
 
   <screenshots>
-    <screenshot>
+    <screenshot type="default">
       <image type="source">
         https://raw.githubusercontent.com/flathub/org.claws_mail.Claws-Mail/379b411ceda0d0fb6f612c94eed008724df674eb/screenshots/claws-mail-main-window.png
       </image>
+      <caption>The main window</caption>
     </screenshot>
     <screenshot>
       <image type="source">
         https://raw.githubusercontent.com/flathub/org.claws_mail.Claws-Mail/379b411ceda0d0fb6f612c94eed008724df674eb/screenshots/claws-mail-compose-window.png
       </image>
+      <caption>The compose window</caption>
     </screenshot>
     <screenshot>
       <image type="source">
         https://raw.githubusercontent.com/flathub/org.claws_mail.Claws-Mail/379b411ceda0d0fb6f612c94eed008724df674eb/screenshots/claws-mail-reading-mail.png
       </image>
+      <caption>The separate message view</caption>
     </screenshot>
     <screenshot>
       <image type="source">
         https://raw.githubusercontent.com/flathub/org.claws_mail.Claws-Mail/379b411ceda0d0fb6f612c94eed008724df674eb/screenshots/claws-mail-current-features.png
       </image>
+      <caption>The currenlty supported features</caption>
     </screenshot>
     <screenshot>
       <image type="source">
         https://raw.githubusercontent.com/flathub/org.claws_mail.Claws-Mail/379b411ceda0d0fb6f612c94eed008724df674eb/screenshots/claws-mail-current-plugins.png
       </image>
+      <caption>The currenlty enabled plugins</caption>
     </screenshot>
   </screenshots>
 
   <releases>
+    <release version="4.2.0" date="2023-11-20">
+      <description>
+      <p>Claws-Mail updated to 4.2.0.</p>
+      <ul>
+        <li>An easy way to open any folder on start-up has been added: Right-click a folder and choose 'Open on start-up'. This can also be configured on the 'Folder list' tab of the /Configuration/Preferences/Display/Summaries page.</li>
+        <li>Spam statistics have been added to the session statistics.</li>
+        <li>It is now possible to save message attachments only, without the other message parts.</li>
+        <li>QuickSearch: support for a "v H V" search expression has been added and the 'y S' expression has been removed ('v X-Label S' can be used instead).</li>
+        <li>font/* and chemical/* MIME types are now recognised.</li>
+        <li>The image viewer now works correctly when not auto-loading images.</li>
+        <li>Icon Themes: it is no longer possible to install or remove system themes.</li>
+        <li>IMAP: Support for SCRAM-SHA-{224,256,384,512} authentication</li>
+        <li>mechanisms has been added.</li>
+        <li>IMAP: The statusbar now shows that expunge is happening.</li>
+        <li>The GData plugin has been removed.</li>
+        <li>The Fancy plugin no longer requires libsoup or libsoup-gnome.</li>
+        <li>The LiteHTML Viewer plugin has been synchronised with litehtml 0.7.</li>
+        <li>The LiteHTML viewer plugin will now only be built automatically if libgumbo 0.12 or newer is available. Building with libgumbo 0.10 must be explicitly requested using --enable-litehtml_viewer-plugin.</li>
+        <li>For extra debug output use --enable-more-addressbook-debug and --enable-more-ldap-debug.</li>
+        <li>Added translation: Portuguese</li>
+        <li>Updated translations: Brazilian Portuguese, Catalan, Czech, French, Polish, Russian, Slovak, Spanish, Swedish, Traditional Chinese, Turkish.</li>
+      </ul>
+      <p>Bug fixes</p>
+      <ul>
+        <li>bug 4491, 'address autocompletion list does not expand in height with the number of matches'</li>
+        <li>bug 4618, 'Rate limit by remote breaks queued/marked actions (Delete/Move)'</li>
+        <li>bug 4631, 'Embedding external editor crashes Claws-Mail on Wayland'</li>
+        <li>bug 4637, 'Segmentation fault when using SUMMARY is empty'</li>
+        <li>bug 4645, 'fails to check for perl-ExtUtils::Embed'</li>
+        <li>bug 4648, 'fails to build with gcc 13'</li>
+        <li>bug 4658, 'Headers unfolded incorrectly in message view'</li>
+        <li>bug 4664, 'OAUTH2 overwrites passwords even for plaintext logins'</li>
+        <li>bug 4666, 'fancy plugin doesn't build with libwebkit2gtk-4.1'</li>
+        <li>bug 4670, 'To/CC incorrectly escaped with a trailing backslash'</li>
+        <li>bug 4679, 'The correct date header is interpreted incorrectly to display strange date.'</li>
+        <li>bug 4693, 'Hang and crash when enable disable SVG Rendering prefs'</li>
+        <li>when starting with msgview hidden, toggling msgview to show it would use incorrect height</li>
+        <li>update quicksearch history list when changing type </li>
+        <li>wrong message which is shown when mail can't be sent</li>
+        <li>when redirecting, disable queueing</li>
+        <li>arbitrary paste restriction</li>
+        <li>when queueing or drafting a msg with an attachment which no longer exists, use the correct label on the button of the warning dialogue</li>
+        <li>using a custom header in found_in_addressbook match expressions</li>
+        <li>URIs may contain the '$' dollar sign</li>
+        <li>OAuth2, Update on-disk tokens as well when in-memory tokens are updated</li>
+        <li>Microsoft POP3 OAuth2 protocol</li>
+      </ul>
+      </description>
+    </release>
     <release version="4.1.0" date="2022-04-03">
+      <description>
       <p>Claws-Mail updated to 4.1.0.</p>
       <ul>
         <li>>Text zooming in the Message View is now possible, using CTRL+mouse wheel up/down, CRTL+touchpad two-fingered vertical swiping, or the Message View's right-click menu.</li>
@@ -119,8 +176,10 @@
         <li>weird logic with the 'Edit filter action' dialog</li>
         <li>resource leaks; memory corruption</li>
       </ul>
+      </description>
     </release>
     <release version="4.0.0-1" date="2021-11-20">
+      <description>
         <p>Claws-Mail 4.0.0</p>
         <ul>
             <li>First release using GTK-3 toolkit.</li>
@@ -132,13 +191,16 @@
             <li>Spell-checking support enabled.</li>
             <li>Extended notifications support enabled.</li>
         </ul>
+      </description>
     </release>
     <release version="4.0.0" date="2021-11-12">
+      <description>
         <p>Claws-Mail updated to 4.0.0</p>
         <ul>
             <li>First release using GTK-3 toolkit.</li>
         </ul>
-        <p><i>Flatpak packaging note</i>: the gpg-agent will no longer be started inside the flatpak package if it is not running. Please make sure that gpg-agent is running on the host system if you rely on access to smartcards/security keys.</p>
+        <p><em>Flatpak packaging note</em>: the gpg-agent will no longer be started inside the flatpak package if it is not running. Please make sure that gpg-agent is running on the host system if you rely on access to smartcards/security keys.</p>
+      </description>
     </release>
     <release version="3.18.0-1" date="2021-07-10">
       <description>

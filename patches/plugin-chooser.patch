@@ -1,0 +1,160 @@
+diff --git a/src/gtk/filesel.c b/src/gtk/filesel.c
+index 41b9f89f7..8e5341ec7 100644
+--- a/src/gtk/filesel.c
++++ b/src/gtk/filesel.c
+@@ -247,3 +247,129 @@ gchar *filesel_select_file_save_folder(const gchar *title, const gchar *path)
+ 	return filesel_select_file (title, path, FALSE, TRUE, NULL);
+ }
+ 
++static GList *filesel_create_flatpak(const gchar *title, const gchar *path,
++			     gboolean multiple_files,
++			     gboolean open, gboolean folder_mode,
++			     const gchar *filter)
++{
++	GSList *slist = NULL, *slist_orig = NULL;
++	GList *list = NULL;
++
++	gint action = (open == TRUE) ?
++			(folder_mode == TRUE ? GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER:
++					       GTK_FILE_CHOOSER_ACTION_OPEN):
++			(folder_mode == TRUE ? GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER:
++					       GTK_FILE_CHOOSER_ACTION_SAVE);
++
++	gchar * action_btn = (open == TRUE) ? _("_Open"):_("_Save");
++	GtkWidget *chooser = gtk_file_chooser_dialog_new
++				(title, NULL, action,
++				_("_Cancel"), GTK_RESPONSE_CANCEL,
++				action_btn, GTK_RESPONSE_ACCEPT,
++				NULL);
++
++	gtk_file_chooser_set_local_only(GTK_FILE_CHOOSER(chooser), FALSE);
++
++	if (filter != NULL) {
++		GtkFileFilter *file_filter = gtk_file_filter_new();
++		gtk_file_filter_add_pattern(file_filter, filter);
++		gtk_file_chooser_set_filter(GTK_FILE_CHOOSER(chooser),
++					    file_filter);
++	}
++
++	if (action == GTK_FILE_CHOOSER_ACTION_OPEN) {
++		GtkImage *preview;
++		preview = GTK_IMAGE(gtk_image_new ());
++		gtk_file_chooser_set_preview_widget (GTK_FILE_CHOOSER(chooser), GTK_WIDGET(preview));
++		g_signal_connect (chooser, "update-preview",
++			    G_CALLBACK (update_preview_cb), preview);
++
++	}
++
++	if (action == GTK_FILE_CHOOSER_ACTION_SAVE) {
++		gtk_dialog_set_default_response(GTK_DIALOG(chooser), GTK_RESPONSE_ACCEPT);
++	}
++
++	manage_window_set_transient (GTK_WINDOW(chooser));
++	gtk_window_set_modal(GTK_WINDOW(chooser), TRUE);
++
++	gtk_file_chooser_set_select_multiple (GTK_FILE_CHOOSER(chooser), multiple_files);
++
++	if (path && strlen(path) > 0) {
++		char *filename = NULL;
++		char *realpath = g_strdup(path);
++		char *tmp = NULL;
++		if (path[strlen(path)-1] == G_DIR_SEPARATOR) {
++			filename = "";
++		} else if ((filename = strrchr(path, G_DIR_SEPARATOR)) != NULL) {
++			filename++;
++			*(strrchr(realpath, G_DIR_SEPARATOR)+1) = '\0';
++		} else {
++			filename = (char *) path;
++			g_free(realpath);
++			realpath = g_strdup(get_home_dir());
++		}
++		if (g_utf8_validate(realpath, -1, NULL))
++			tmp = g_filename_from_utf8(realpath, -1, NULL, NULL, NULL);
++		if (tmp == NULL)
++			tmp = g_strdup(realpath);
++		gtk_file_chooser_set_current_folder(GTK_FILE_CHOOSER(chooser), tmp);
++		g_free(tmp);
++		if (action == GTK_FILE_CHOOSER_ACTION_SAVE) {
++			if (g_utf8_validate(filename, -1, NULL))
++				gtk_file_chooser_set_current_name(GTK_FILE_CHOOSER(chooser),
++								  filename);
++		}
++		g_free(realpath);
++	} else {
++		gchar *tmp = NULL;
++		if (!prefs_common.attach_load_dir || !*prefs_common.attach_load_dir)
++			prefs_common.attach_load_dir = g_strdup_printf("%s%c", get_home_dir(), G_DIR_SEPARATOR);
++		if (g_utf8_validate(prefs_common.attach_load_dir, -1, NULL))
++			tmp = g_filename_from_utf8(prefs_common.attach_load_dir, -1, NULL, NULL, NULL);
++		if (tmp == NULL)
++			tmp = g_strdup(prefs_common.attach_load_dir);
++		gtk_file_chooser_set_current_folder(GTK_FILE_CHOOSER(chooser), tmp);
++		g_free(tmp);
++	}
++
++	if (gtk_dialog_run (GTK_DIALOG (chooser)) == GTK_RESPONSE_ACCEPT)
++		slist = gtk_file_chooser_get_filenames (GTK_FILE_CHOOSER (chooser));
++
++	manage_window_focus_out(chooser, NULL, NULL);
++	gtk_widget_destroy (chooser);
++
++	slist_orig = slist;
++
++	if (slist) {
++		gchar *tmp = g_strdup(slist->data);
++
++		if (!path && prefs_common.attach_load_dir)
++			g_free(prefs_common.attach_load_dir);
++
++		if (strrchr(tmp, G_DIR_SEPARATOR))
++			*(strrchr(tmp, G_DIR_SEPARATOR)+1) = '\0';
++
++		if (!path)
++			prefs_common.attach_load_dir = g_filename_to_utf8(tmp, -1, NULL, NULL, NULL);
++
++		g_free(tmp);
++	}
++
++	while (slist) {
++		list = g_list_append(list, slist->data);
++		slist = slist->next;
++	}
++
++	if (slist_orig)
++		g_slist_free(slist_orig);
++
++	return list;
++}
++
++GList *filesel_select_multiple_files_open_with_filter_flatpak(	const gchar *title,
++								const gchar *path,
++								const gchar *filter)
++{
++	return filesel_create_flatpak (title, path, TRUE, TRUE, FALSE, filter);
++}
+diff --git a/src/gtk/filesel.h b/src/gtk/filesel.h
+index 3a5aae684..03a31e697 100644
+--- a/src/gtk/filesel.h
++++ b/src/gtk/filesel.h
+@@ -34,4 +34,8 @@ GList *filesel_select_multiple_files_open_with_filter(	const gchar *title,
+ 							const gchar *path,
+ 							const gchar *filter);
+ 
++GList *filesel_select_multiple_files_open_with_filter_flatpak(	const gchar *title,
++								const gchar *path,
++								const gchar *filter);
++
+ #endif /* __FILESEL_H__ */
+diff --git a/src/gtk/pluginwindow.c b/src/gtk/pluginwindow.c
+index 4e6baf21a..dddac5e9b 100644
+--- a/src/gtk/pluginwindow.c
++++ b/src/gtk/pluginwindow.c
+@@ -196,7 +196,7 @@ static void load_cb(GtkButton *button, PluginWindow *pluginwindow)
+ {
+ 	GList *file_list;
+ 
+-	file_list = filesel_select_multiple_files_open_with_filter(
++	file_list = filesel_select_multiple_files_open_with_filter_flatpak(
+ 			_("Select the Plugins to load"), get_plugin_dir(), 
+ 			"*." G_MODULE_SUFFIX);
+ 
