@@ -1,13 +1,8 @@
 {
   "app-id": "org.claws_mail.Claws-Mail",
   "runtime": "org.freedesktop.Platform",
-  "runtime-version": "24.08",
+  "runtime-version": "23.08",
   "sdk": "org.freedesktop.Sdk",
-  "sdk-extensions": ["org.freedesktop.Sdk.Extension.vala"],
-  "build-options": {
-    "prepend-path" : "/usr/lib/sdk/vala/bin/",
-    "prepend-ld-library-path" : "/usr/lib/sdk/vala/lib"
-  },
   "command": "claws-mail.sh",
   "finish-args": [
     "--share=ipc",
