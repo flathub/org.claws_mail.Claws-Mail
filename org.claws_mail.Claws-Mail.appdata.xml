@@ -67,6 +67,75 @@
   </screenshots>
 
   <releases>
+    <release version="4.3.0" date="2024-06-10">
+      <description>
+        <p>Claws-Mail updated to 4.3.0.</p>
+        <ul>
+          <li>Compose window: when the focus is in the message text, copied files can be pasted as attachments using /Edit/paste or Ctrl+V. (The context menu's Paste will still insert the list of files into the message body.)</li>
+          <li>'/Mark/Mark all read in folder' and 'Mark/Mark all unread in folder' have been re-added to the Message List context menu.</li>
+          <li>It is now possible to use '/Tools/Remove references' when forwarding mail.</li>
+          <li>Keyboard shortcuts: The "Choose preset keyboard shortcuts" selector has been integrated into the main preferences page. When 'Current' is the selected preset, Apply/OK will keep the existing settings.</li>
+          <li>An MBOX file can now be imported from the command line using `claws-mail --import-mbox %f` where %f is the full path to the MBOX file.</li>
+          <li>OAUTH2 support for Microsoft 365 GCC High has been added.</li>
+          <li>LiteHTML Viewer plugin: Updated to LiteHTML 0.9.</li>
+          <li>The menurc file is now backed-up on startup.</li>
+          <li>Removed support for the obsolete Avant Window Navigator.</li>
+          <li>Various code cleanups.</li>
+          <li>The manual has been updated.</li>
+          <li>New translation: Albanian.</li>
+          <li>Updated translations: Catalan, Czech, French, Hungarian, Indonesian, Polish, Romanian, Slovak, Spanish, Swedish, Turkish.</li>
+        </ul>
+        <p>Bug fixes</p>
+        <ul>
+          <li>bug 4668, 'Sometimes, at program start, message list takes all the vertical space'</li>
+          <li>bug 4720, 'matcher: release regex_t in matcherprop_string_match'</li>
+          <li>bug 4724, 'set proper availability status to sign/encrypt toolbar buttons'</li>
+          <li>bug 4725, 'oauth2: remove trailing zero from transmit buffer in oauth2_contact_server'</li>
+          <li>bug 4728, 'socket: handle GNUTLS_E_PREMATURE_TERMINATION in ssl_read'</li>
+          <li>bug 4730, 'oauth2: fix string handling in oauth2_contact_server'</li>
+          <li>bug 4733, 'Line breaks lost in headers'</li>
+          <li>bug 4734, 'ssl_certificate: remove unhelpful warnings from certificate check'</li>
+          <li>bug 4746, 'matcher: remove incorrect condition in matcherprop_free'</li>
+          <li>bug 4747, 'matcher: simplify matcherprop_new'</li>
+          <li>bug 4749, 'release regex_t in summary_compile_simplify_regexp'</li>
+          <li>bug 4750, 'remove regcomp wrapper and call regcomp directly'</li>
+          <li>bug 4752, 'Adjust incorrect debug_printf call in pgp plugins'</li>
+          <li>bug 4754, 'text/enriched literal less-than sign sequence handled incorrectly</li>
+          <li>bug 4757, 'remove AX_FUNC_MKDIR'</li>
+          <li>bug 4758, 'remove unused check for bind_textdomain_codeset'</li>
+          <li>bug 4759, 'remove unused function checks from AC_CHECK_FUNCS'</li>
+          <li>bug 4760, 'use correct type for move_bar_id'</li>
+          <li>bug 4762, 'oauth2: preserve an existing refresh token'</li>
+          <li>bug 4765, 'only store smtp auth if authorization method is OAUTH2'</li>
+          <li>bug 4766, 'preserve the expiry value of SMTP auth type is not OAUTH2'</li>
+          <li>bug 4768, 'Adjust logic while evaluating enable_avatars'</li>
+          <li>bug 4770, 'remove intl from list of include directories'</li>
+          <li>bug 4773, 'remove obsolescent AC_C_CONST'</li>
+          <li>bug 4780, 'use proper prototype for two archiver functions'</li>
+          <li>bug 4781, 'use correct prototype for privacy_free_signature_data'</li>
+          <li>bug 4782, 'use correct prototype for stop_archiving'</li>
+          <li>bug 4786, 'remove type confusion in getsockopt call in sock_connect_async_cb'</li>
+          <li>bug 4787, 'Use correct function for memory transfer in crypt_cfb_buf'</li>
+          <li>bug 4788, '"Change primary passphrase" disabled status handling'</li>
+          <li>bug 4790, 'widget spacing in "Changing primary passphrase" dialog'</li>
+          <li>bug 4791, 'remove obsolete glib version check'</li>
+          <li>bug 4795, 'Please remove -no-cpp-precomp flag for Apple'</li>
+          <li>bug 4796, 'URL with wide character doesn't work'</li>
+          <li>bug 4798, 'Quoting wrong when format=flowed and respect_flowed_format is set'</li>
+          <li>CIDs 1220325, 1491306 and 1491315, 'Explicit null dereferenced (FORWARD_NULL)'</li>
+          <li>CIDs 1491064, 1491074, 1491211, 1491105, 1491139, 1491164, 1491166, 1491168, 1491169, 1491178, 1491232, 1491242, 1492281 and 1591844 'Use after free (USE_AFTER_FREE)'</li>
+          <li>CID 1491137 'Out-of-bounds access (OVERRUN)'</li>
+          <li>CID 1591952 values overwritten before being used</li>
+          <li>CID 1596594 (CHECKED_RETURN)</li>
+          <li>CID 1596595 'Resource leak'</li>
+          <li>errors caused by invalid MIME viewer command-line</li>
+          <li>building on non-X11 systems</li>
+          <li>Use CFLAGS provided by nettle.pc</li>
+          <li>Fancy plugin, recognise mid and data embedded images</li>
+        </ul>
+        <p>For further details of the numbered bugs and RFEs listed above see https://www.claws-mail.org/bug/[BUG NUMBER]</p>
+      </description>
+    </release>
     <release version="4.2.0" date="2023-11-20">
       <description>
       <p>Claws-Mail updated to 4.2.0.</p>
