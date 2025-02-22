@@ -75,10 +75,8 @@ uninstall:
 	flatpak uninstall -y --user $(APPID)//local-build
 
 # Validate appdata-file to appstream validation rules.
-# TODO: is there an lighter way than 'flatpak info' to test for installed flatpak package?
 validate:
 	@(type appstream-util 1>/dev/null 2>&1 && (appstream-util validate $(APPDATA) || true)) || \
-		(flatpak info org.freedesktop.appstream-glib 1>/dev/null 2>&1 && (flatpak run org.freedesktop.appstream-glib validate $(APPDATA) || true)) || \
 		echo "'appstream-util' cannot be found. This is needed for \"appdata\" metadata validation."
 
 distclean: clean

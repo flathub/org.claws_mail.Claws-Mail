@@ -71,6 +71,12 @@ Disabled plug-ins due to unresolved dependencies:
 - BSFilter (assumes `bsfilter` is available)
 - Perl (assumes `perl` is available)
 
+## Contributions
+
+With contributions and feedback by:
+
+- [scabala](<https://github.com/scabala>)
+
 ## TODO
 
 Reminders for later consideration.
