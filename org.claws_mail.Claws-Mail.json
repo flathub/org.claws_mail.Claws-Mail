@@ -340,6 +340,7 @@
         }
       ]
     },
+    "shared-modules/libayatana-appindicator/libayatana-appindicator-gtk3.json",
     {
       "name": "claws-mail",
       "buildsystem": "autotools",
