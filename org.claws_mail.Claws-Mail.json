@@ -187,11 +187,6 @@
           "type": "archive",
           "url": "https://github.com/AbiWord/enchant/archive/refs/tags/v2.3.3.tar.gz",
           "sha256": "5952a792570eb232af464331b537381aca8bc711a1d8c4251e1f035e9cca8cfb"
-        },
-        {
-          "type": "archive",
-          "url": "https://github.com/coreutils/gnulib/archive/refs/tags/v1.0.tar.gz",
-          "sha256": "c3585637eeab2268400f26a7174862d72c416e9476a0ff4ec12ebce646a0f477"
         }
       ],
       "cleanup": [
@@ -200,6 +195,29 @@
         "/include",
         "*.a",
         "*.la"
+      ],
+      "modules": [
+        {
+          "name": "git-merge-changelog",
+          "buildsystem": "autotools",
+          "sources": [
+            {
+              "type": "archive",
+              "url": "https://github.com/coreutils/gnulib/archive/refs/tags/v1.0.tar.gz",
+              "sha256": "c3585637eeab2268400f26a7174862d72c416e9476a0ff4ec12ebce646a0f477"
+            },
+            {
+              "type": "script",
+              "dest-filename": "autogen.sh",
+              "commands": [
+                "mkdir ./tmp-tool",
+                "./gnulib-tool --create-testdir --dir=./tmp-tool git-merge-changelog",
+                "rm -rf build-aux",
+                "(shopt -s dotglob; mv tmp-tool/* .)"
+              ]
+            }
+          ]
+        }
       ]
     },
     "shared-modules/intltool/intltool-0.51.json",
