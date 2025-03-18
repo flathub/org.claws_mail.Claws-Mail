@@ -34,6 +34,20 @@ Claws-Mail with the following plug-ins:
 - TNEF parser
 - vCalendar
 
+### Extra plugins
+
+This application provides a [Flatpak extension](https://docs.flatpak.org/en/latest/extension.html) entrypoint to install additional plugins as Flatpak extensions.
+
+As of the time of writing, there are no extra plugins published yet but most up-to-date information take a look [here](https://flathub.org/apps/org.claws_mail.Claws-Mail) -> bottom of the page -> 'Addons'.
+
+#### For plugin developers/packagers
+
+Plugin files should be installed into `/app/extra-plugins/<PLUGIN_NAME>` as installation prefix, such as binaries are installed into `/app/extra-plugins/<PLUGIN_NAME>/bin` and libraries are installed into `/app/extra-plugins/<PLUGIN_NAME>/lib`, etc.
+
+#### For plugin users
+
+Plugins will follow naming convention of `org.claws_mail.Claws.Mail.Plugin.<PLUGIN_NAME>`. Inside Flatpak sandbox, plugin will be available under `/app/extra-plugins/<PLUGIN_NAME>`. For convenience, there's `/app/etra-plugins/lib` directory that combines libraries from all plugins. No need to look for plugin shared library in plugin-specific directory - it is all in one place.
+
 ## Packaging details
 
 ### Dependencies
