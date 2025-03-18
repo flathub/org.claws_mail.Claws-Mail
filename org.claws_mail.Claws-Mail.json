@@ -13,8 +13,19 @@
     "--system-talk-name=org.freedesktop.NetworkManager",
     "--talk-name=org.freedesktop.Notifications",
     "--filesystem=home",
-    "--filesystem=xdg-run/gnupg:ro"
+    "--filesystem=xdg-run/gnupg:ro",
+    "--env=PATH=/app/bin:/usr/bin:/app/extra-plugins/bin"
   ],
+  "add-extensions": {
+    "org.claws_mail.ClawsMail.Plugin": {
+      "directory": "extra-plugins",
+      "subdirectories": true,
+      "merge-dirs": "lib;bin;share",
+      "add-ld-path": "lib",
+      "autodelete": true,
+      "no-autodownload": true
+    }
+  },
   "modules": [
     {
       "name": "libetpan",
@@ -383,6 +394,9 @@
         "install -Dm644 claws-mail-64x64.png /app/share/icons/hicolor/64x64/apps/org.claws_mail.Claws-Mail.png",
         "install -Dm644 claws-mail-128x128.png /app/share/icons/hicolor/128x128/apps/org.claws_mail.Claws-Mail.png",
         "install -Dm755 claws-mail.sh /app/bin/claws-mail.sh"
+      ],
+      "post-install": [
+        "mkdir -p ${FLATPAK_DEST}/extra-plugins"
       ],
       "sources": [
         {
