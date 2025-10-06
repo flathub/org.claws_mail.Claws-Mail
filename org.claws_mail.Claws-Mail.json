@@ -195,9 +195,9 @@
       "config-opts": [],
       "sources": [
         {
-          "type": "git",
-          "url": "https://github.com/AbiWord/enchant.git",
-          "commit": "823df01a92a3dad9172f0ae1a0bcfe9d7039645b"
+          "type": "archive",
+          "url": "https://github.com/rrthomas/enchant/releases/download/v2.3.3/enchant-2.3.3.tar.gz",
+          "sha256": "3da12103f11cf49c3cf2fd2ce3017575c5321a489e5b9bfa81dd91ec413f3891"
         }
       ],
       "cleanup": [
