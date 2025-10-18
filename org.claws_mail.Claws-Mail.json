@@ -1,7 +1,7 @@
 {
   "app-id": "org.claws_mail.Claws-Mail",
   "runtime": "org.freedesktop.Platform",
-  "runtime-version": "23.08",
+  "runtime-version": "25.08",
   "sdk": "org.freedesktop.Sdk",
   "command": "claws-mail.sh",
   "finish-args": [
@@ -73,8 +73,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://github.com/uclouvain/openjpeg/archive/refs/tags/v2.4.0.tar.gz",
-          "sha256": "8702ba68b442657f11aaeb2b338443ca8d5fb95b0d845757968a7be31ef7f16d"
+          "url": "https://github.com/uclouvain/openjpeg/archive/refs/tags/v2.5.4.tar.gz",
+          "sha256": "a695fbe19c0165f295a8531b1e4e855cd94d0875d2f88ec4b61080677e27188a"
         }
       ],
       "cleanup": [
@@ -97,8 +97,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://gitlab.freedesktop.org/poppler/poppler/-/archive/poppler-24.11.0/poppler-poppler-24.11.0.tar.bz2",
-          "sha256": "241108ec50be654e4e35e93c18a555cf6a6bed0eb4210c3751491e53183e4172"
+          "url": "https://poppler.freedesktop.org/poppler-25.09.1.tar.xz",
+          "sha256": "0c1091d01d3dd1664a13816861e812d02b29201e96665454b81b52d261fad658"
         }
       ],
       "cleanup": [
@@ -111,11 +111,14 @@
     {
       "name": "libical",
       "buildsystem": "cmake-ninja",
+      "config-opts": [
+        "-DENABLE_GTK_DOC=OFF"
+      ],
       "sources": [
         {
           "type": "archive",
-          "url": "https://github.com/libical/libical/releases/download/v3.0.16/libical-3.0.16.tar.gz",
-          "sha256": "b44705dd71ca4538c86fb16248483ab4b48978524fb1da5097bd76aa2e0f0c33"
+          "url": "https://github.com/libical/libical/archive/refs/tags/v3.0.20.tar.gz",
+          "sha256": "e73de92f5a6ce84c1b00306446b290a2b08cdf0a80988eca0a2c9d5c3510b4c2"
         }
       ],
       "cleanup": [
@@ -188,25 +191,6 @@
         }
       ],
       "cleanup": []
-    },
-    {
-      "name": "enchant",
-      "buildsystem": "autotools",
-      "config-opts": [],
-      "sources": [
-        {
-          "type": "git",
-          "url": "https://github.com/AbiWord/enchant.git",
-          "commit": "823df01a92a3dad9172f0ae1a0bcfe9d7039645b"
-        }
-      ],
-      "cleanup": [
-        "/libexec",
-        "/lib/pkgconfig",
-        "/include",
-        "*.a",
-        "*.la"
-      ]
     },
     "shared-modules/intltool/intltool-0.51.json",
     {
