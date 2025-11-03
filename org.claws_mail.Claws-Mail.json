@@ -4,6 +4,10 @@
   "runtime-version": "25.08",
   "sdk": "org.freedesktop.Sdk",
   "command": "claws-mail.sh",
+  "build-options": {
+    "strip": true,
+    "no-debuginfo": true
+  },
   "finish-args": [
     "--share=ipc",
     "--share=network",
@@ -14,7 +18,8 @@
     "--talk-name=org.freedesktop.Notifications",
     "--filesystem=home",
     "--filesystem=xdg-run/gnupg:ro",
-    "--env=PATH=/app/bin:/usr/bin:/app/extra-plugins/bin"
+    "--env=PATH=/app/bin:/usr/bin:/app/extra-plugins/bin",
+    "--env=GDK_PIXBUF_MODULE_FILE=/app/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache"
   ],
   "add-extensions": {
     "org.claws_mail.ClawsMail.Plugin": {
@@ -192,6 +197,25 @@
       ],
       "cleanup": []
     },
+    {
+      "name": "enchant",
+      "buildsystem": "autotools",
+      "config-opts": [],
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://github.com/rrthomas/enchant/releases/download/v2.8.12/enchant-2.8.12.tar.gz",
+          "sha256": "20e5fab2ca0f95ba9d1ef5052fe5b028e3e1d66d4cdea6b9adfcbd3e524c2a09"
+        }
+      ],
+      "cleanup": [
+        "/libexec",
+        "/lib/pkgconfig",
+        "/include",
+        "*.a",
+        "*.la"
+      ]
+    },
     "shared-modules/intltool/intltool-0.51.json",
     {
       "name": "libndp",
@@ -336,6 +360,44 @@
       ]
     },
     "shared-modules/libayatana-appindicator/libayatana-appindicator-gtk3.json",
+    {
+      "name": "gdk-pixbuf-loaders-others",
+      "buildsystem": "meson",
+      "config-opts": [
+        "-Dgtk_doc=false",
+        "-Dman=false",
+        "-Dintrospection=disabled",
+        "-Dinstalled_tests=false",
+        "-Dtests=false",
+        "-Ddocumentation=false",
+        "-Dglycin=disabled",
+        "-Dandroid=disabled",
+        "-Dbuiltin_loaders=none",
+        "-Dpng=disabled",
+        "-Dtiff=disabled",
+        "-Djpeg=disabled",
+        "-Dgif=disabled",
+        "-Dothers=enabled"
+      ],
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://gitlab.gnome.org/GNOME/gdk-pixbuf/-/archive/2.44.3/gdk-pixbuf-2.44.3.tar.gz",
+          "sha256": "cc591e3949a95e2f7b50173c9373df8846648b15aa596d9e7ec7258381bfac0d"
+        }
+      ],
+      "post-install": [
+        "GDK_PIXBUF_MODULEDIR=${FLATPAK_DEST}/lib/gdk-pixbuf-2.0/2.10.0/loaders gdk-pixbuf-query-loaders > ${FLATPAK_DEST}/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache",
+        "gdk-pixbuf-query-loaders >> ${FLATPAK_DEST}/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache"
+      ],
+      "cleanup": [
+        "/bin",
+        "/include",
+        "/share",
+        "/lib/pkgconfig",
+        "/lib/libgdk_pixbuf-2.0.so.*"
+      ]
+    },
     {
       "name": "claws-mail",
       "buildsystem": "autotools",
