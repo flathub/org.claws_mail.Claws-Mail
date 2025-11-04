@@ -1,4 +1,4 @@
-{ pkgs ? import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/4d2b37a84fad1091b9de401eb450aae66f1a741e.tar.gz") {} }:
+{ pkgs ? import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/refs/tags/25.05.tar.gz") {} }:
 
 pkgs.mkShell {
   buildInputs = [
@@ -6,8 +6,11 @@ pkgs.mkShell {
     pkgs.htop
     pkgs.zlib
     pkgs.less
-    #pkgs.iproute2
-    #pkgs.gitMinimal
+    pkgs.cacert
+#    pkgs.git
+#    pkgs.iputils
+#    pkgs.iproute2
+#    pkgs.dig
 
     pkgs.gnumake
     pkgs.autoconf
@@ -17,5 +20,6 @@ pkgs.mkShell {
 
     pkgs.flatpak
     pkgs.flatpak-builder
+    pkgs.appstream
   ];
 }
