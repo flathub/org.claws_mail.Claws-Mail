@@ -332,7 +332,6 @@
       ]
     },
     "shared-modules/gtk2/gtk2.json",
-    "shared-modules/libsecret/libsecret.json",
     {
       "name": "pinentry",
       "buildsystem": "autotools",
