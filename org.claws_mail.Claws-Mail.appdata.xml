@@ -10,6 +10,7 @@
   </developer>
   <summary>Claws Mail is an email client (and news reader), based on GTK+</summary>
   <url type="homepage">https://claws-mail.org/</url>
+  <url type="vcs-browser">https://git.claws-mail.org/?p=claws.git;a=summary</url>
 
   <description>
     <p>Claws Mail is an email client (and news reader), based on GTK+, featuring:</p>
