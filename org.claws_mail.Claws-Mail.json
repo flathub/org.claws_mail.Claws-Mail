@@ -31,6 +31,16 @@
       "no-autodownload": true
     }
   },
+  "cleanup": [
+    "/include",
+    "/lib/cmake",
+    "/libexec",
+    "/lib/pkgconfig",
+    "/share/doc",
+    "/share/man",
+    "*.a",
+    "*.la"
+  ],
   "modules": [
     {
       "name": "libetpan",
@@ -47,12 +57,6 @@
           "url": "https://github.com/dinhvh/libetpan/archive/80f0f515555de2798c6984db507d406d0153f1f5.zip",
           "sha256": "0e6b6d08721df3c8f0036547e963d313d6a130cefe881c8e12f6dc46b347a68f"
         }
-      ],
-      "cleanup": [
-        "/lib/pkgconfig",
-        "/include",
-        "*.a",
-        "*.la"
       ]
     },
     {
@@ -64,12 +68,6 @@
           "url": "https://github.com/Yeraze/ytnef/archive/v1.9.3.tar.gz",
           "sha256": "41a0033bde33c86a7e4aa4e14bb822dd03084098638e7d6557263e47e80b4f4f"
         }
-      ],
-      "cleanup": [
-        "/lib/pkgconfig",
-        "/include",
-        "*.a",
-        "*.la"
       ]
     },
     {
@@ -83,11 +81,7 @@
         }
       ],
       "cleanup": [
-        "/lib/pkgconfig",
-        "/lib/openjpeg-*",
-        "/include",
-        "*.a",
-        "*.la"
+        "/lib/openjpeg-*"
       ]
     },
     {
@@ -107,11 +101,7 @@
         }
       ],
       "cleanup": [
-        "/lib/pkgconfig",
-        "/include",
-        "/share",
-        "*.a",
-        "*.la"
+        "/share"
       ]
     },
     {
@@ -126,14 +116,6 @@
           "url": "https://github.com/libical/libical/archive/refs/tags/v3.0.20.tar.gz",
           "sha256": "e73de92f5a6ce84c1b00306446b290a2b08cdf0a80988eca0a2c9d5c3510b4c2"
         }
-      ],
-      "cleanup": [
-        "/libexec",
-        "/lib/pkgconfig",
-        "/lib/cmake",
-        "/include",
-        "*.a",
-        "*.la"
       ]
     },
     {
@@ -145,12 +127,6 @@
           "url": "https://codeberg.org/gumbo-parser/gumbo-parser/archive/0.12.1.tar.gz",
           "sha256": "c0bb5354e46539680724d638dbea07296b797229a7e965b13305c930ddc10d82"
         }
-      ],
-      "cleanup": [
-        "/lib/pkgconfig",
-        "/include",
-        "*.a",
-        "*.la"
       ]
     },
     {
@@ -165,14 +141,7 @@
         }
       ],
       "cleanup": [
-        "/libexec",
-        "/lib/pkgconfig",
-        "/include",
-        "/share/doc",
-        "/share/graphviz/doc",
-        "/share/man",
-        "*.a",
-        "*.la"
+        "/share/graphviz/doc"
       ]
     },
     {
@@ -198,8 +167,7 @@
             "autoreconf -fi"
           ]
         }
-      ],
-      "cleanup": []
+      ]
     },
     {
       "name": "enchant",
@@ -211,15 +179,6 @@
           "url": "https://github.com/rrthomas/enchant/releases/download/v2.8.12/enchant-2.8.12.tar.gz",
           "sha256": "20e5fab2ca0f95ba9d1ef5052fe5b028e3e1d66d4cdea6b9adfcbd3e524c2a09"
         }
-      ],
-      "cleanup": [
-        "/libexec",
-        "/lib/pkgconfig",
-        "/include",
-        "/share/doc",
-        "/share/man",
-        "*.a",
-        "*.la"
       ]
     },
     "shared-modules/intltool/intltool-0.51.json",
@@ -232,14 +191,6 @@
           "url": "http://libndp.org/files/libndp-1.8.tar.gz",
           "sha256": "88ffb66ee2eb527f146f5c02f5ccbc38ba97d2b0d57eb46bfba488821ab0c02b"
         }
-      ],
-      "cleanup": [
-        "/libexec",
-        "/lib/pkgconfig",
-        "/include",
-        "/share/man",
-        "*.a",
-        "*.la"
       ]
     },
     {
@@ -278,14 +229,6 @@
           "url": "https://gitlab.freedesktop.org/NetworkManager/NetworkManager/-/archive/1.38.6/NetworkManager-1.38.6.tar.bz2",
           "sha256": "af20f65827c4fdb9000c992ac715cff28a7a5a7d344353947d96a98262a492fd"
         }
-      ],
-      "cleanup": [
-        "/libexec",
-        "/lib/pkgconfig",
-        "/lib/cmake",
-        "/include",
-        "*.a",
-        "*.la"
       ]
     },
     "shared-modules/dbus-glib/dbus-glib.json",
@@ -310,11 +253,7 @@
       ],
       "cleanup": [
         "/sbin",
-        "/include",
-        "/lib/pkgconfig",
-        "/share",
-        "*.a",
-        "*.la"
+        "/share"
       ]
     },
     "shared-modules/gtk2/gtk2.json",
@@ -380,9 +319,7 @@
       ],
       "cleanup": [
         "/bin",
-        "/include",
         "/share",
-        "/lib/pkgconfig",
         "/lib/libgdk_pixbuf-2.0.so.*"
       ]
     },
@@ -413,13 +350,6 @@
           "type": "patch",
           "path": "patches/plugin-chooser.patch"
         }
-      ],
-      "cleanup": [
-        "/lib/pkgconfig",
-        "/include",
-        "/share/man",
-        "*.a",
-        "*.la"
       ]
     },
     {
