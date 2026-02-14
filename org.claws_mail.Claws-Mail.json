@@ -235,18 +235,36 @@
         }
       ]
     },
-    "shared-modules/gtk2/gtk2.json",
+    {
+      "name": "gcr3",
+      "buildsystem": "meson",
+      "config-opts": [
+        "-Dintrospection=false",
+        "-Dgtk=false",
+        "-Dgtk_doc=false",
+        "-Dgpg_path=",
+        "-Dssh_agent=false",
+        "-Dsystemd=disabled"
+      ],
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://gitlab.gnome.org/GNOME/gcr/-/archive/3.41.1/gcr-3.41.1.tar.bz2",
+          "sha256": "7e06e86e12aadaac6a72f2ee7eeaaaa6228a0ba3b92cadd50b45c0f05f0d91c6"
+        }
+      ]
+    },
     {
       "name": "pinentry",
       "buildsystem": "autotools",
       "config-opts": [
-        "--enable-pinentry-gtk2",
+        "--enable-pinentry-gnome3",
+        "--disable-pinentry-gtk2",
         "--disable-ncurses",
         "--disable-fallback-curses",
         "--disable-pinentry-curses",
         "--disable-pinentry-emacs",
         "--disable-inside-emacs",
-        "--disable-pinentry-gnome3",
         "--disable-pinentry-qt",
         "--disable-pinentry-qt4",
         "--disable-pinentry-qt5",
