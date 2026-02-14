@@ -1,0 +1,13 @@
+diff --git a/src/main.c b/src/main.c
+index 6fd7502..973777e 100644
+--- a/src/main.c
++++ b/src/main.c
+@@ -2241,7 +2241,7 @@ gchar *claws_get_socket_name(void)
+ 		gint stat_ok;
+ 
+ 		socket_dir = g_strdup_printf("%s%cclaws-mail",
+-					   g_get_user_runtime_dir(), G_DIR_SEPARATOR);
++					   "/dev/shm", G_DIR_SEPARATOR);
+ 		stat_ok = g_stat(socket_dir, &st);
+ 		if (stat_ok < 0 && errno != ENOENT) {
+ 			g_print("Error stat'ing socket_dir %s: %s\n",

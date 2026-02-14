@@ -20,7 +20,7 @@
     "--filesystem=xdg-run/gnupg:ro",
     "--env=PATH=/app/bin:/usr/bin:/app/extra-plugins/bin",
     "--env=GDK_PIXBUF_MODULE_FILE=/app/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache",
-    "--filesystem=xdg-run/claws-mail:create"
+    "--allow=per-app-dev-shm"
   ],
   "add-extensions": {
     "org.claws_mail.ClawsMail.Plugin": {
@@ -425,6 +425,10 @@
         {
           "type": "patch",
           "path": "patches/plugin-chooser.patch"
+        },
+        {
+          "type": "patch",
+          "path": "patches/socket-dir.patch"
         }
       ],
       "cleanup": [
