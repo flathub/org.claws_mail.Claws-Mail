@@ -249,8 +249,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://gitlab.gnome.org/GNOME/gcr/-/archive/3.41.1/gcr-3.41.1.tar.bz2",
-          "sha256": "7e06e86e12aadaac6a72f2ee7eeaaaa6228a0ba3b92cadd50b45c0f05f0d91c6"
+          "url": "https://download.gnome.org/sources/gcr/3.41/gcr-3.41.1.tar.xz",
+          "sha256": "bb7128a3c2febbfee9c03b90d77d498d0ceb237b0789802d60185c71c4bea24f"
         }
       ]
     },
