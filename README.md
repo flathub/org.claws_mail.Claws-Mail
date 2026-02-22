@@ -56,7 +56,6 @@ The dependencies are as follows. In addition, the dependencies are in-order in t
 
 Claws-Mail dependencies:
 - libetpan
-- libnotify
 - libcanberra
 - libenchant
 - libnm (NetworkManager)
@@ -69,14 +68,10 @@ Plug-ins with their dependencies:
   - libytnef
 - PDF-viewer
   - libpoppler
-    - libopenjpeg
 - vCalendar
   - libical
 - Lite HTML-viewer
   - libgumbo
-- GData
-  - liboauth
-  - libuhttpmock
 - Bogofilter
   - bogofilter (cli filter application)
 
