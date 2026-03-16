@@ -237,6 +237,21 @@
       ]
     },
     {
+      "name": "libarchive",
+      "buildsystem": "cmake-ninja",
+      "config-opts": [
+        "-DENABLE_TEST=OFF",
+        "-DENABLE_COVERAGE=OFF"
+      ],
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://github.com/libarchive/libarchive/releases/download/v3.8.6/libarchive-3.8.6.tar.xz",
+          "sha256": "8ac57c1f5e99550948d1fe755c806d26026e71827da228f36bef24527e372e6f"
+        }
+      ]
+    },
+    {
       "name": "pinentry",
       "buildsystem": "autotools",
       "config-opts": [
@@ -344,8 +359,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://www.claws-mail.org/releases/claws-mail-4.3.1.tar.xz",
-          "sha256": "d8adf210c767ab58252dfc5ab3c69e603d7ffdb7281a1e3340d2d86062f468a6"
+          "url": "https://www.claws-mail.org/releases/claws-mail-4.4.0.tar.xz",
+          "sha256": "03e0549d5f0fcd7a59804186524105d05ebb5e534d42a4b86a9a90f729ca255b"
         },
         {
           "type": "patch",
