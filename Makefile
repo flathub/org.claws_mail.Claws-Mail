@@ -7,7 +7,6 @@
 # - modify `$(APPID)` and `$(RUNCMD)` in Makefile to reflect flatpak application.
 # - requires `$(APPID).json` and `$(APPID).appdata.xml` to exist.
 # - `static/` directory for static files. Makefile assumes it exists.
-# - `flathub.json` file with build instructions for flathub.
 #
 # Directories `build`, `repo`, `.flatpak-builder` may be created as part of the process.
 
@@ -26,7 +25,7 @@ ifdef IN_NIX_SHELL
 	BUILDCMD += --disable-rofiles-fuse
 endif
 
-build: $(MANIFEST) $(APPDATA) flathub.json static/*
+build: $(MANIFEST) $(APPDATA) static/*
 	$(BUILDCMD) --force-clean --disable-updates build $(MANIFEST)
 	touch build
 
