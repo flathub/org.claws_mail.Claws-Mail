@@ -338,7 +338,7 @@
       "name": "gdk-pixbuf-loaders-others",
       "buildsystem": "meson",
       "config-opts": [
-        "-Dgtk_doc=false",
+        "-Ddocumentation=false",
         "-Dman=false",
         "-Dintrospection=disabled",
         "-Dinstalled_tests=false",
@@ -351,13 +351,14 @@
         "-Dtiff=disabled",
         "-Djpeg=disabled",
         "-Dgif=disabled",
-        "-Dothers=enabled"
+        "-Dothers=enabled",
+        "-Dlegacy_xpm=enabled"
       ],
       "sources": [
         {
           "type": "archive",
-          "url": "https://gitlab.gnome.org/GNOME/gdk-pixbuf/-/archive/2.44.3/gdk-pixbuf-2.44.3.tar.gz",
-          "sha256": "cc591e3949a95e2f7b50173c9373df8846648b15aa596d9e7ec7258381bfac0d"
+          "url": "https://gitlab.gnome.org/GNOME/gdk-pixbuf/-/archive/2.44.6/gdk-pixbuf-2.44.6.tar.gz",
+          "sha256": "2e4deb685ca0406a046abed13cca56f336ea0764313209817367d00e26de2cbb"
         }
       ],
       "post-install": [
@@ -369,7 +370,7 @@
         "/include",
         "/share",
         "/lib/pkgconfig",
-        "/lib/libgdk_pixbuf-2.0.so.*"
+        "/lib/libgdk_pixbuf-2.0.so*"
       ]
     },
     {
