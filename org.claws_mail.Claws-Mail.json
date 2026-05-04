@@ -31,6 +31,15 @@
       "no-autodownload": true
     }
   },
+  "cleanup": [
+    "/include",
+    "/lib/cmake",
+    "/libexec",
+    "/lib/pkgconfig",
+    "/share/man",
+    "*.la",
+    "*.a"
+  ],
   "modules": [
     {
       "name": "libetpan",
@@ -47,12 +56,6 @@
           "url": "https://github.com/dinhvh/libetpan/archive/80f0f515555de2798c6984db507d406d0153f1f5.zip",
           "sha256": "0e6b6d08721df3c8f0036547e963d313d6a130cefe881c8e12f6dc46b347a68f"
         }
-      ],
-      "cleanup": [
-        "/lib/pkgconfig",
-        "/include",
-        "*.a",
-        "*.la"
       ]
     },
     {
@@ -64,30 +67,6 @@
           "url": "https://github.com/Yeraze/ytnef/archive/v1.9.3.tar.gz",
           "sha256": "41a0033bde33c86a7e4aa4e14bb822dd03084098638e7d6557263e47e80b4f4f"
         }
-      ],
-      "cleanup": [
-        "/lib/pkgconfig",
-        "/include",
-        "*.a",
-        "*.la"
-      ]
-    },
-    {
-      "name": "libopenjpeg",
-      "buildsystem": "cmake-ninja",
-      "sources": [
-        {
-          "type": "archive",
-          "url": "https://github.com/uclouvain/openjpeg/archive/refs/tags/v2.5.4.tar.gz",
-          "sha256": "a695fbe19c0165f295a8531b1e4e855cd94d0875d2f88ec4b61080677e27188a"
-        }
-      ],
-      "cleanup": [
-        "/lib/pkgconfig",
-        "/lib/openjpeg-*",
-        "/include",
-        "*.a",
-        "*.la"
       ]
     },
     {
@@ -105,12 +84,6 @@
           "url": "https://poppler.freedesktop.org/poppler-25.09.1.tar.xz",
           "sha256": "0c1091d01d3dd1664a13816861e812d02b29201e96665454b81b52d261fad658"
         }
-      ],
-      "cleanup": [
-        "/lib/pkgconfig",
-        "/include",
-        "*.a",
-        "*.la"
       ]
     },
     {
@@ -125,14 +98,6 @@
           "url": "https://github.com/libical/libical/archive/refs/tags/v3.0.20.tar.gz",
           "sha256": "e73de92f5a6ce84c1b00306446b290a2b08cdf0a80988eca0a2c9d5c3510b4c2"
         }
-      ],
-      "cleanup": [
-        "/libexec",
-        "/lib/pkgconfig",
-        "/lib/cmake",
-        "/include",
-        "*.a",
-        "*.la"
       ]
     },
     {
@@ -144,12 +109,6 @@
           "url": "https://codeberg.org/gumbo-parser/gumbo-parser/archive/0.12.1.tar.gz",
           "sha256": "c0bb5354e46539680724d638dbea07296b797229a7e965b13305c930ddc10d82"
         }
-      ],
-      "cleanup": [
-        "/lib/pkgconfig",
-        "/include",
-        "*.a",
-        "*.la"
       ]
     },
     {
@@ -162,13 +121,6 @@
           "url": "https://gitlab.com/graphviz/graphviz/-/archive/2.50.0/graphviz-2.50.0.tar.bz2",
           "sha256": "262b4285530f5804f656e643bfccf0e910fcfc483639921209e16fd7a04bebe0"
         }
-      ],
-      "cleanup": [
-        "/libexec",
-        "/lib/pkgconfig",
-        "/include",
-        "*.a",
-        "*.la"
       ]
     },
     {
@@ -194,8 +146,7 @@
             "autoreconf -fi"
           ]
         }
-      ],
-      "cleanup": []
+      ]
     },
     {
       "name": "enchant",
@@ -207,32 +158,6 @@
           "url": "https://github.com/rrthomas/enchant/releases/download/v2.8.12/enchant-2.8.12.tar.gz",
           "sha256": "20e5fab2ca0f95ba9d1ef5052fe5b028e3e1d66d4cdea6b9adfcbd3e524c2a09"
         }
-      ],
-      "cleanup": [
-        "/libexec",
-        "/lib/pkgconfig",
-        "/include",
-        "*.a",
-        "*.la"
-      ]
-    },
-    "shared-modules/intltool/intltool-0.51.json",
-    {
-      "name": "libndp",
-      "buildsystem": "autotools",
-      "sources": [
-        {
-          "type": "archive",
-          "url": "http://libndp.org/files/libndp-1.8.tar.gz",
-          "sha256": "88ffb66ee2eb527f146f5c02f5ccbc38ba97d2b0d57eb46bfba488821ab0c02b"
-        }
-      ],
-      "cleanup": [
-        "/libexec",
-        "/lib/pkgconfig",
-        "/include",
-        "*.a",
-        "*.la"
       ]
     },
     {
@@ -272,17 +197,22 @@
           "sha256": "af20f65827c4fdb9000c992ac715cff28a7a5a7d344353947d96a98262a492fd"
         }
       ],
-      "cleanup": [
-        "/libexec",
-        "/lib/pkgconfig",
-        "/lib/cmake",
-        "/include",
-        "*.a",
-        "*.la"
+      "modules": [
+        "shared-modules/intltool/intltool-0.51.json",
+        {
+          "name": "libndp",
+          "buildsystem": "autotools",
+          "sources": [
+            {
+              "type": "archive",
+              "url": "http://libndp.org/files/libndp-1.8.tar.gz",
+              "sha256": "88ffb66ee2eb527f146f5c02f5ccbc38ba97d2b0d57eb46bfba488821ab0c02b"
+            }
+          ]
+        },
+        "shared-modules/dbus-glib/dbus-glib.json"
       ]
     },
-    "shared-modules/dbus-glib/dbus-glib.json",
-    "shared-modules/libcanberra/libcanberra.json",
     {
       "name": "pcsc-lite",
       "buildsystem": "autotools",
@@ -306,18 +236,32 @@
         }
       ]
     },
-    "shared-modules/gtk2/gtk2.json",
+    {
+      "name": "libarchive",
+      "buildsystem": "cmake-ninja",
+      "config-opts": [
+        "-DENABLE_TEST=OFF",
+        "-DENABLE_COVERAGE=OFF"
+      ],
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://github.com/libarchive/libarchive/releases/download/v3.8.6/libarchive-3.8.6.tar.xz",
+          "sha256": "8ac57c1f5e99550948d1fe755c806d26026e71827da228f36bef24527e372e6f"
+        }
+      ]
+    },
     {
       "name": "pinentry",
       "buildsystem": "autotools",
       "config-opts": [
-        "--enable-pinentry-gtk2",
+        "--enable-pinentry-gnome3",
+        "--disable-pinentry-gtk2",
         "--disable-ncurses",
         "--disable-fallback-curses",
         "--disable-pinentry-curses",
         "--disable-pinentry-emacs",
         "--disable-inside-emacs",
-        "--disable-pinentry-gnome3",
         "--disable-pinentry-qt",
         "--disable-pinentry-qt4",
         "--disable-pinentry-qt5",
@@ -328,17 +272,37 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://gnupg.org/ftp/gcrypt/pinentry/pinentry-1.3.1.tar.bz2",
-          "sha256": "bc72ee27c7239007ab1896c3c2fae53b076e2c9bd2483dc2769a16902bce8c04"
+          "url": "https://gnupg.org/ftp/gcrypt/pinentry/pinentry-1.3.2.tar.bz2",
+          "sha256": "8e986ed88561b4da6e9efe0c54fa4ca8923035c99264df0b0464497c5fb94e9e"
+        }
+      ],
+      "modules": [
+        {
+          "name": "gcr3",
+          "buildsystem": "meson",
+          "config-opts": [
+            "-Dintrospection=false",
+            "-Dgtk=false",
+            "-Dgtk_doc=false",
+            "-Dgpg_path=",
+            "-Dssh_agent=false",
+            "-Dsystemd=disabled"
+          ],
+          "sources": [
+            {
+              "type": "archive",
+              "url": "https://download.gnome.org/sources/gcr/3.41/gcr-3.41.1.tar.xz",
+              "sha256": "bb7128a3c2febbfee9c03b90d77d498d0ceb237b0789802d60185c71c4bea24f"
+            }
+          ]
         }
       ]
     },
-    "shared-modules/libayatana-appindicator/libayatana-appindicator-gtk3.json",
     {
       "name": "gdk-pixbuf-loaders-others",
       "buildsystem": "meson",
       "config-opts": [
-        "-Dgtk_doc=false",
+        "-Ddocumentation=false",
         "-Dman=false",
         "-Dintrospection=disabled",
         "-Dinstalled_tests=false",
@@ -351,13 +315,14 @@
         "-Dtiff=disabled",
         "-Djpeg=disabled",
         "-Dgif=disabled",
-        "-Dothers=enabled"
+        "-Dothers=enabled",
+        "-Dlegacy_xpm=enabled"
       ],
       "sources": [
         {
           "type": "archive",
-          "url": "https://gitlab.gnome.org/GNOME/gdk-pixbuf/-/archive/2.44.3/gdk-pixbuf-2.44.3.tar.gz",
-          "sha256": "cc591e3949a95e2f7b50173c9373df8846648b15aa596d9e7ec7258381bfac0d"
+          "url": "https://gitlab.gnome.org/GNOME/gdk-pixbuf/-/archive/2.44.6/gdk-pixbuf-2.44.6.tar.gz",
+          "sha256": "2e4deb685ca0406a046abed13cca56f336ea0764313209817367d00e26de2cbb"
         }
       ],
       "post-install": [
@@ -366,10 +331,9 @@
       ],
       "cleanup": [
         "/bin",
-        "/include",
         "/share",
         "/lib/pkgconfig",
-        "/lib/libgdk_pixbuf-2.0.so.*"
+        "/lib/libgdk_pixbuf-2.0.so*"
       ]
     },
     {
@@ -382,6 +346,11 @@
         "--enable-vcalendar-plugin",
         "--enable-litehtml_viewer-plugin",
         "--enable-bogofilter-plugin",
+        "--enable-dbus",
+        "--enable-ldap",
+        "--enable-pgpcore-plugin",
+        "--enable-pgpmime-plugin",
+        "--enable-pgpinline-plugin",
         "--disable-perl-plugin",
         "--disable-dillo-plugin",
         "--disable-bsfilter-plugin"
@@ -392,19 +361,48 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://www.claws-mail.org/releases/claws-mail-4.3.1.tar.xz",
-          "sha256": "d8adf210c767ab58252dfc5ab3c69e603d7ffdb7281a1e3340d2d86062f468a6"
+          "url": "https://www.claws-mail.org/releases/claws-mail-4.4.0.tar.xz",
+          "sha256": "03e0549d5f0fcd7a59804186524105d05ebb5e534d42a4b86a9a90f729ca255b"
         },
         {
           "type": "patch",
           "path": "patches/plugin-chooser.patch"
         }
       ],
-      "cleanup": [
-        "/lib/pkgconfig",
-        "/include",
-        "*.a",
-        "*.la"
+      "modules": [
+        "shared-modules/libcanberra/libcanberra.json",
+        "shared-modules/libayatana-appindicator/libayatana-appindicator-gtk3.json",
+        {
+          "name": "openldap",
+          "buildsystem": "autotools",
+          "config-opts": [
+            "--disable-debug",
+            "--enable-dynamic",
+            "--disable-syslog",
+            "--enable-ipv6",
+            "--enable-local",
+            "--disable-slapd",
+            "--disable-backends",
+            "--disable-overlays",
+            "--disable-argon2",
+            "--disable-balancer",
+            "--disable-static",
+            "--enable-shared",
+            "--with-cyrus-sasl",
+            "--without-systemd",
+            "--with-threads",
+            "--with-tls=gnutls",
+            "--with-mp",
+            "--with-odbc=auto"
+          ],
+          "sources": [
+            {
+              "type": "archive",
+              "url": "https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.6.12.tgz",
+              "sha256": "1716ad779e85d743694c3e3b05277fb71b6a5eadca43c7a958aa62683b22208e"
+            }
+          ]
+        }
       ]
     },
     {
