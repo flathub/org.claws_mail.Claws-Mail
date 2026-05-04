@@ -333,7 +333,7 @@
         "/bin",
         "/share",
         "/lib/pkgconfig",
-        "/lib/libgdk_pixbuf-2.0.so.*"
+        "/lib/libgdk_pixbuf-2.0.so*"
       ]
     },
     {
