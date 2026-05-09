@@ -18,7 +18,7 @@
     "--talk-name=org.freedesktop.Notifications",
     "--talk-name=org.a11y.Bus",
     "--talk-name=org.a11y.Status",
-    "--filesystem=home",
+    "--persist=.",
     "--filesystem=xdg-run/gnupg:ro",
     "--env=PATH=/app/bin:/usr/bin:/app/extra-plugins/bin",
     "--env=GDK_PIXBUF_MODULE_FILE=/app/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache"
