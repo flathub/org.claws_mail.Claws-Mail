@@ -16,6 +16,8 @@
     "--socket=pcsc",
     "--system-talk-name=org.freedesktop.NetworkManager",
     "--talk-name=org.freedesktop.Notifications",
+    "--talk-name=org.a11y.Bus",
+    "--talk-name=org.a11y.Status",
     "--filesystem=home",
     "--filesystem=xdg-run/gnupg:ro",
     "--env=PATH=/app/bin:/usr/bin:/app/extra-plugins/bin",
