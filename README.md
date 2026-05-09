@@ -4,6 +4,14 @@ The flathub recipe for building [Claws-Mail](https://claws-mail.org) as a flatpa
 
 See [packaging.md for flatpak-package details](packaging.md)
 
+## Storage in Claws-Mail flatpak
+
+The Claws-Mail flatpak follows strict practices. As such, email will be stored with the flatpak-package itself. Claws-Mail is offered full access to `~/Downloads`, and read-only access to `~/Documents` and `~/Pictures`.
+
+New users will find their email stored as part of the flatpak-package at `~/.var/app/org.claws_mail.Claws-Mail/`. Existing users need to copy their configuration stored at `~/.claws-mail` and their email-folder there. Alternatively, they can share their email-folder `~/Mail` (or whichever directory previously stored their email) with Claws-Mail via `flatpak --user override --filesystem=~/Mail org.claws_mail.Claws-Mail`.
+
+__Warning__: _fully_ uninstalling and cleaning up Claws-Mail flatpak-package, includes this email-storage. This is by design of Flatpak.
+
 ## Functionality
 
 Claws-Mail features: _Enchant_, _GnuTLS_, _Iconv_, _IPv6_, _LDAP_, _libetpan_, _librSVG_, _libSM_, _NetworkManager_, _OAuth2_.
